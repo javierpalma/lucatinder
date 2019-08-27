@@ -57,7 +57,7 @@ public class HomeController {
 	      System.out.println("--------"+perfil);	      
 	      model.addAttribute(perfil);
 	      perfilService.addPerfil(perfil);
-	      return "listado.html";
+	      return "listado";
 	  }
 	  
 	  /**
@@ -74,7 +74,7 @@ public class HomeController {
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");	
 
-	      return "inicio.html";
+	      return "inicio";
 	  }
 	  
 	  
