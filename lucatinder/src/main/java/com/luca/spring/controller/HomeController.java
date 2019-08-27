@@ -19,7 +19,9 @@ import org.slf4j.LoggerFactory;
  * 
  * @Version 1.0
  * 
- * Controlador para los requestMapping 
+ * Controlador para los requestMapping
+ * Controller for requestMapping
+ *  
  */
 @Controller
 public class HomeController {
