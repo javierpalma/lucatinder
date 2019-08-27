@@ -105,5 +105,15 @@ public class HomeController {
 		  logger.warn("--------- Usuario no encontrado ");
 		  return "inicio";
 	  }
+	  
+	  @RequestMapping(value = "/aleatorio", method = RequestMethod.GET)
+	  public String generarPerfilFalso() { 
+		  logger.info("-- Registrando perfil falso");
+	      System.out.println("-- metodo generarPerfilFalso");
+	      //System.out.println("--------"+perfil);	      
+	      //model.addAttribute(perfil);
+	      perfilService.crearPerfilFalso();
+	      return "inicio";
+	  }
 
 }

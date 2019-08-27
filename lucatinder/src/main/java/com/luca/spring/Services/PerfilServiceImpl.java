@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.luca.spring.Util.Utilidades;
 import com.luca.spring.dao.PerfilDAO;
 import com.luca.spring.model.Perfil;
 
@@ -36,6 +37,14 @@ public class PerfilServiceImpl implements PerfilService {
 	@Override
 	public Perfil getPefil(int id) {
 		return perfilDAO.getPefil(id);
+	}
+	
+	@Override
+	public void crearPerfilFalso() {
+		for (int i = 0; i < 20; i++) {
+			
+			perfilDAO.addPerfil(Utilidades.crearPerfilFalso()); //el metodo addPerfilFalso no esta creado en DAO
+		}
 	}
 	
 	
