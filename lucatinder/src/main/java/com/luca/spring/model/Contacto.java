@@ -1,16 +1,12 @@
 package com.luca.spring.model;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,8 +24,6 @@ public class Contacto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_contacto")
 	int idContacto;
-	@ManyToOne(cascade= CascadeType.ALL)
-	@JoinColumn(name = "id_contacto")
 	int idPeril;
 	@Column(name = "id_otro_perfil")
 	int idOtroPerfil;

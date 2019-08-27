@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
