@@ -16,9 +16,17 @@ public class PerfilDAOImpl implements PerfilDAO {
 		super();
 	}
 
-
+	
+	/**
+	 * @author José Miguel
+	 * @name addPerfil
+	 * @description Método para añadir perfil a la tabla perfil en la bdd
+	 * @date 27/08/19
+	 * @version 1.0
+	 * @param perfil
+	 */
 	public void addPerfil(Perfil perfil) {
-		
+		entityManager.merge(perfil);
 	}
 
 	
