@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.luca.spring.model.Contacto;
 import com.luca.spring.model.Perfil;
 
 @Repository
@@ -31,6 +32,10 @@ public class PerfilDAOImpl implements PerfilDAO {
 
 	
 	public void addLike(int idPerfil, int idOtroPerfil) {
+		Contacto c = new Contacto();
+		c.setIdPeril(idPerfil);
+		c.setIdOtroPerfil(idOtroPerfil);
+		entityManager.merge(c);
 		
 	}
 
