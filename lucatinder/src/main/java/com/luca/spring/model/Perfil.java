@@ -25,20 +25,19 @@ public class Perfil implements Serializable{
 	@GeneratedValue
 	@Column(name = "ID_PERFIL")
 	private Integer idPerfil;
-	String nombre;
-	String genero;
-	Integer edad;
-	String descripcion;
-	String poblacion;
-	Set<Contacto> setContacto;
+	private String nombre;
+	private String genero;
+	private Integer edad;
+	private String descripcion;
+	private String poblacion;
+
 	
 	public Perfil() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Perfil(Integer idPerfil, String nombre, String genero, Integer edad, String descripcion, String poblacion,
-			Set<Contacto> setContacto) {
+	public Perfil(Integer idPerfil, String nombre, String genero, Integer edad, String descripcion, String poblacion) {
 		super();
 		this.idPerfil = idPerfil;
 		this.nombre = nombre;
@@ -46,7 +45,7 @@ public class Perfil implements Serializable{
 		this.edad = edad;
 		this.descripcion = descripcion;
 		this.poblacion = poblacion;
-		this.setContacto = setContacto;
+
 	}
 
 	public Integer getIdPerfil() {
@@ -97,18 +96,11 @@ public class Perfil implements Serializable{
 		this.poblacion = poblacion;
 	}
 
-	public Set<Contacto> getSetContacto() {
-		return setContacto;
-	}
-
-	public void setSetContacto(Set<Contacto> setContacto) {
-		this.setContacto = setContacto;
-	}
 
 	@Override
 	public String toString() {
 		return "Perfil [idPerfil=" + idPerfil + ", nombre=" + nombre + ", genero=" + genero + ", edad=" + edad
-				+ ", descripcion=" + descripcion + ", poblacion=" + poblacion + ", setContacto=" + setContacto + "]";
+				+ ", descripcion=" + descripcion + ", poblacion=" + poblacion + "]";
 	}
 	
 	

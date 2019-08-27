@@ -30,8 +30,6 @@ public class Contacto implements Serializable {
 	@Column(name = "id_otro_perfil")
 	int idOtroPerfil;
 	
-	private Set<Perfil> setPerfil;
-	
 	public Contacto() {
 		super();
 	}
@@ -58,14 +56,6 @@ public class Contacto implements Serializable {
 
 	public void setIdOtroPerfil(int idOtroPerfil) {
 		this.idOtroPerfil = idOtroPerfil;
-	}
-
-	public Set<Perfil> getSetPerfil() {
-		return setPerfil;
-	}
-
-	public void setSetPerfil(Set<Perfil> setPerfil) {
-		this.setPerfil = setPerfil;
 	}
 
 	public static long getSerialversionuid() {
