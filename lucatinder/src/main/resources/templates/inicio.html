@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <form th:action="/loggin" th:object="${perfil}" method="post">
+       
+        <table>
+            <tr>
+                <td><label th:text="#{form.perfil.id}">Introduce tu ID de usuario:</label></td>
+                <td><input type="text" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Continuar">
+                </td>
+            </tr>
+        </table>
+       
+       
+   </form>
+    
+</body>
+</html>
