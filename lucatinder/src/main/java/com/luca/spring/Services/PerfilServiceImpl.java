@@ -17,17 +17,17 @@ public class PerfilServiceImpl implements PerfilService {
 
 	@Override
 	public void addPerfil(Perfil perfil) {
-		
+		perfilDAO.addPerfil(perfil);
 	}
 
 	@Override
 	public void addLike(int idPerfil, int idOtroPerfil) {
-		
+		perfilDAO.addLike(idPerfil, idOtroPerfil);
 	}
 
 	@Override
 	public Perfil getPefil(int id) {
-		return null;
+		return perfilDAO.getPefil(id);
 	}
 	
 	
