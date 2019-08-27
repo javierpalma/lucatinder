@@ -9,12 +9,12 @@
 <body>
    <p>PAgina de inicio</p>
    <br>
-   <form th:action="/loggin"  method="post">
+   <form name="formulario1" th:action="@{/login/{id}}"  method="POST">
        
         <table>
             <tr>
-                <td><label th:text="#{form.perfil.idPerfil}">Introduce tu ID de usuario:</label></td>
-                <td><input type="text" th:field="*{idPerfil}"></td>
+                <td><label >Introduce tu ID de usuario:</label></td>
+                <td><input type="text"></td>
             </tr>
             <tr>
                 <td>

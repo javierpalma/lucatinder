@@ -1,6 +1,7 @@
 package com.luca.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,7 @@ import org.slf4j.LoggerFactory;
  *  
  */
 @Controller
+@ComponentScan("/resources/templates/")
 public class HomeController {
 	@Autowired
 	private PerfilService perfilService;
@@ -90,8 +92,8 @@ public class HomeController {
 	   * @date 27/08/19
 	   * 
 	   */
-	  @RequestMapping(value="/loggin", method = RequestMethod.POST)
-	  public String loggin(@PathVariable("id") int id, ModelMap model) {
+	  @RequestMapping(value="/login", method = RequestMethod.POST)
+	  public String loggin(@PathVariable("id") Integer id, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  
 		  model.addAttribute(id);
