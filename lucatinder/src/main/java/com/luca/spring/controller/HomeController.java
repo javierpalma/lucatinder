@@ -96,7 +96,7 @@ public class HomeController {
 	  public String loggin(@PathVariable("id") Integer id, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  
-		  model.addAttribute(id.toString());
+		  model.addAttribute(id);
 		  if(perfilService.getPefil(id)!=null) {
 			  logger.info("------------ Usuario encontrado ");
 			  return "listado";
