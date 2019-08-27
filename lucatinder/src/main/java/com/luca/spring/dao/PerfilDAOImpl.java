@@ -2,7 +2,7 @@ package com.luca.spring.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.luca.spring.model.Perfil;
@@ -27,10 +27,10 @@ public class PerfilDAOImpl implements PerfilDAO {
 	}
 
 
-	@Override
+	@Query("SELECT id, name, email FROM user WHERE id = ?")
 	public Perfil getPefil(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return entityManager.find(Perfil.class, id);
 	}
 	
 
