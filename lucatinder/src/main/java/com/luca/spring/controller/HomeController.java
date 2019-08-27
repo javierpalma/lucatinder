@@ -3,7 +3,9 @@ package com.luca.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -58,6 +60,16 @@ public class HomeController {
 		  logger.info("-- en Inicio");	
 
 	      return "inicio.html";
+	  }
+	  
+	  @RequestMapping(value="/loggin", method = RequestMethod.GET)
+	  public String loggin(@PathVariable("id") int id, ModelMap model) {
+		  logger.info("--- Buscando usuario por id ");
+		  model.addAttribute(id);
+		  if(perfilService.getPefil(id)!=null) { 
+			  return "listado";
+		  }
+		  return "inicio";
 	  }
 
 }
