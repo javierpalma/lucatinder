@@ -19,5 +19,9 @@ public class LucatinderApplicationTests {
 	public void pruebaPerfilDAOImpl() {//HAcemos test para probar el PerfilDAOImpl
 		Perfil p= new Perfil();
 	}
-
+	
+	@Test
+	public void logginTest() {//Hacer test para probar si podemos acceder a la aplicacion con nuestro id
+		
+	}
 }
