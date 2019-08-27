@@ -16,10 +16,8 @@ public class LucatinderApplicationTests {
 	}
 	
 	@Test
-	public void pruebaPerfilDAOImpl() {
+	public void pruebaPerfilDAOImpl() {//HAcemos test para probar el PerfilDAOImpl
 		Perfil p= new Perfil();
-		p.se
-		
 	}
 
 }
