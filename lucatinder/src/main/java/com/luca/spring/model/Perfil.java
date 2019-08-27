@@ -1,13 +1,28 @@
 package com.luca.spring.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Perfil {
+/**
+ * 
+ * @author Jose Muguel
+ *
+ */
+@Entity
+@Table(name = "PERFIL")
+public class Perfil implements Serializable{
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	@Column(name = "ID_PERFIL")
