@@ -8,6 +8,14 @@ import org.springframework.stereotype.Service;
 import com.luca.spring.dao.PerfilDAO;
 import com.luca.spring.model.Perfil;
 
+/**
+ * 
+ * @author Vladimir Juan
+ * 
+ * Esta clase nos redirige a los metodos de perfilDAO
+ * This class redirect to methods of PerfilDAO
+ */
+
 @Service
 @Transactional
 public class PerfilServiceImpl implements PerfilService {
