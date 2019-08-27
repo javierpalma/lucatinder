@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.luca.spring.Services.PerfilService;
+import com.luca.spring.model.Perfil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,5 +25,23 @@ public class HomeController {
 		perfilService.addLike(idPerfil, idOtroPerfil);
 		return "listado.html";
 	}
+	
+	/**
+	 * @author Jose Miguel
+	 * @param perfil
+	 * @param model
+	 * @return listado.html
+	 * @date 27/08/19
+	 * @version 1.0
+	 */
+	  @RequestMapping(value = "/addPerfil", method = RequestMethod.POST)
+	  public String processSubmit(@ModelAttribute("perfil") Perfil perfil, ModelMap model) { 
+		  logger.info("-- Registrando");
+	      System.out.println("-- metodo addCliente");
+	      System.out.println("--------"+perfil);	      
+	      model.addAttribute(perfil);
+	      perfilService.addPerfil(perfil);
+	      return "listado.html";
+	  }
 
 }
