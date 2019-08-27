@@ -34,7 +34,13 @@ public class PerfilDAOImpl implements PerfilDAO {
 		
 	}
 
-
+	/**
+	 * @author Vladimir Juan
+	 *
+	 * @Return Este metodo nos permite seleccionar el perfil segun el id proporcionado.
+	 * @Return This method get Perfil when given id of user
+	 * 
+	 */
 	@Query("SELECT id, name, email FROM user WHERE id = ?")
 	public Perfil getPefil(int id) {
 		
