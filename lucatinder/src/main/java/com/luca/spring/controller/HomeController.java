@@ -92,11 +92,11 @@ public class HomeController {
 	   * @date 27/08/19
 	   * 
 	   */
-	  @RequestMapping(value="/login", method = RequestMethod.POST)
+	  @RequestMapping(value="/login/{id}", method = RequestMethod.POST)
 	  public String loggin(@PathVariable("id") Integer id, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  
-		  model.addAttribute(id);
+		  model.addAttribute(id.toString());
 		  if(perfilService.getPefil(id)!=null) {
 			  logger.info("------------ Usuario encontrado ");
 			  return "listado";
