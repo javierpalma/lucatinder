@@ -1,13 +1,26 @@
 package com.luca.spring.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Perfil {
+/**
+ * @author Jose Muguel
+ * @name Perfil
+ * @description Clase Perfil relacionada con la tabla perfil de la bdd
+ * @date 27/08/19
+ * @version 1.0
+ */
+@Entity
+@Table(name = "PERFIL")
+public class Perfil implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	@Column(name = "ID_PERFIL")
