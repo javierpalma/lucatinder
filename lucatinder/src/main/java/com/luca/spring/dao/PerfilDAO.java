@@ -7,6 +7,8 @@ import com.luca.spring.model.Perfil;
  * @author Javier Palma
  * 
  * Esta Interface sera imlementacion de PerfilDAOImpl
+ * 
+ * This Interface will be implement by PerfilDAOImpl
  *
  */
 
