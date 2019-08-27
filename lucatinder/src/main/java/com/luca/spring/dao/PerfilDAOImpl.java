@@ -30,7 +30,11 @@ public class PerfilDAOImpl implements PerfilDAO {
 		entityManager.merge(perfil);
 	}
 
-	
+	/**
+	 * @author Javier Palma
+	 * @name addLike
+	 * @param(id usuario actal, id usuario al que doy like)
+	 */
 	public void addLike(int idPerfil, int idOtroPerfil) {
 		Contacto c = new Contacto();
 		c.setIdPeril(idPerfil);
