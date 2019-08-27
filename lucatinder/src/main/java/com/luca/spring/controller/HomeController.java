@@ -73,10 +73,8 @@ public class HomeController {
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");	
-
 	      return "inicio";
 	  }
-	  
 	  
 	  /**
 	   * 
@@ -93,7 +91,7 @@ public class HomeController {
 	   * @date 27/08/19
 	   * 
 	   */
-	  @RequestMapping(value="/loggin", method = RequestMethod.GET)
+	  @RequestMapping(value="/loggin", method = RequestMethod.POST)
 	  public String loggin(@PathVariable("id") int id, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  

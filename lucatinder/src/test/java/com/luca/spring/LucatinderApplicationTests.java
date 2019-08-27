@@ -25,7 +25,6 @@ public class LucatinderApplicationTests {
 	public void logginTest() {//Hacer test para probar si podemos acceder a la aplicacion con nuestro id
 		HomeController h= new HomeController();
 		Perfil p= new Perfil();
-		h.inicio(p);
 		
 	}
 }
