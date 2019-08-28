@@ -69,7 +69,8 @@ public class PerfilDAOImpl implements PerfilDAO {
 		List<Contacto> listaContacto = entityManager.createQuery(hql).getResultList();
 		List<Perfil> listaPerfil = null;
 		for (int i = 0; i < listaContacto.size(); i++) {
-			listaPerfil.add(this.getPefil(listaContacto.get(i).getIdOtroPerfil()));
+			int idOtroPerfil = listaContacto.get(i).getIdOtroPerfil();
+			listaPerfil.add(this.getPefil(idOtroPerfil));
 		}
 		return listaPerfil;
 	}
