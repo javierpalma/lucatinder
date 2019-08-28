@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -86,4 +88,24 @@ public class PerfilDAOImpl implements PerfilDAO {
 		return listaPerfil;
 	}
 
+
+	/**
+	 * @author Asiel
+	 * @name listarPerfil
+	 * @description El metodo obtiene 20 perfiles de la BD distintos al id del usuario
+	 * @date 28/08/19
+	 * @version 1.0
+	 * @return Devuelve un List<Perfil> con los 20 perfiles
+	 */
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	@Transactional
+	public List<Perfil> listarPerfil(int idPerfil){
+		
+		String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id ";
+		List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).getResultList();
+		System.out.println(listaPerfil);
+		return listaPerfil;
+	}
 }

@@ -1,79 +1,94 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org"   
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>LUCATINDER</title>
 </head>
+
+
 <body>
-   <h1>Página de inicio</h1>
-   <br>
-   <form name="formulario1" th:action="@{/login}" th:object="${perfil}"  method="POST">
-       
-        <table align="center">
-            <tr>
-                <td><label for="idPerfil">Introduce tu ID de usuario:</label></td>
-                <td><input type="text"  th:field="*{idPerfil}"></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="Continuar">
-                </td>
-            </tr>
-        </table>
-       
-       
-   </form>
-   
-   <div align="center">
-		<h1>LISTADO DE USUARIOS</h1>
-		<p>Estos son los datos de la tabla de usuarios</p>
-		
-				<form 
-				method="post" 
-				th:object="${perfil}"
-				th:action="@{/addPerfil}"
-				>
-			<table>
-					<td><label for="nombre">Nombre Usuario</label></td>
-					<td><input type="text" th:field="*{nombre}" /></td>
-				</tr>
-				<tr>
-					<td><label for="genero">Género</label></td>
-					<td><input type="text" th:field="*{genero}" /></td>
-				</tr>
-				<tr>
-					<td><label for="edad">Edad</label></td>
-					<td><input type="text" th:field="*{edad}" /></td>
-				</tr>
-								<tr>
-					<td><label for="descripcion">Descripción</label></td>
-					<td><input type="text" th:field="*{descripcion}" /></td> <!-- SE PODRÍA ESCONDER PORQUE ES INCREMENTAL -->
-				</tr>
-				<tr>
-					<td><label for="poblacion">Población</label></td>
-					<td><input type="text" th:field="*{poblacion}" /></td>
-				</tr>
-				<tr>
-					<td><label for="generoInteres">Genero Interés</label></td>
-					<td><input type="text" th:field="*{generoInteres}" /></td>
-				</tr>
-				<tr>
-					<td><label for="edadMinima">Edad Mínima</label></td>
-					<td><input type="text" th:field="*{edadMinima}" /></td>
-				</tr>
-								<tr>
-					<td><label for="edadMaxima">Edad Máxima</label></td>
-					<td><input type="text" th:field="*{edadMaxima}" /></td>
-				</tr>
-			</table>
-			<br />
-			<p>
-				<input type="submit" value="Dar de alta" />
-			</p>
-		</form>
-	</div>
-    
+    <div class="container">
+        <h1>BIENVENID@</h1>
+        <br>
+
+        <div class="row">
+        <form name="formulario1" th:action="@{/login}" th:object="${perfil}" method="POST">
+            <div class="form-group">
+                <label for="idPerfil">Introduce tu ID de usuario:</label>
+                <input type="text" class="form-control" th:field="*{idPerfil}">
+                <input type="submit" value="Continuar">
+            </div>
+        </form>
+        </div>
+
+
+
+
+        <div class="row">
+            <form method="post" th:object="${perfil}" th:action="@{/addPerfil}">
+                <div class="form-group">
+                    <label for="nombre">Nombre Usuario</label>
+                    <input type="text" class="form-control" th:field="*{nombre}">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genero" id="genero1" value="Male" th:field="*{genero}" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Hombre
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genero" id="genero2" value="Female" th:field="*{genero}">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Mujer
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <input type="text" class="form-control" th:field="*{edad}">
+                </div>
+                <div class="form-group">
+                    <label for="descipcion">Descripcion</label>
+                    <input type="text" class="form-control" th:field="*{descripcion}">
+                </div>
+                <div class="form-group">
+                    <label for="poblacion">Poblacion</label>
+                    <input type="text" class="form-control" th:field="*{poblacion}">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genero" id="genero1" value="Male" th:field="*{generoInteres}" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Hombre
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genero" id="genero2" value="Female" th:field="*{generoInteres}">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Mujer
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edadMinima">Edad Minima</label>
+                    <input type="text" class="form-control" th:field="*{edadMinima}">
+                </div>
+                <div class="form-group">
+                    <label for="edadMaxima">Edad Maxima</label>
+                    <input type="text" class="form-control" th:field="*{edadMaxima}">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Dar de alta" />
+                </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

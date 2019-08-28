@@ -3,6 +3,7 @@ package com.luca.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -150,6 +151,24 @@ public class HomeController {
 	      
 	      return "contacto.html";	      
 	   }
-	      	  
-
+	  
+	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
+	  public String listar(@ModelAttribute("perfil") int idPerfil, ModelMap model) {
+		  logger.info("-- en Listado Perfil");	
+	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      System.out.println(listPerfil);
+	      return "listado";
+	      
+	  }
+	  @RequestMapping(value = "/prueba", method = RequestMethod.GET)
+	  public String prueba(Model model) {
+		  logger.info("-- en Listado Perfil");	
+	      List<Perfil> listPerfil = perfilService.listarPerfil(1);
+	      model.addAttribute("listPerfil",listPerfil);
+	      System.out.println(listPerfil);
+	      return "listado";
+	      
+	  }
+	
 }
