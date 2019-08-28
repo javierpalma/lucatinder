@@ -1,5 +1,7 @@
 package com.luca.spring.Services;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,13 @@ public class PerfilServiceImpl implements PerfilService {
 			perfilDAO.addPerfil(Utilidades.crearPerfilFalso()); //el metodo addPerfilFalso no esta creado en DAO
 		}
 	}
+
+	@Override
+	public List<Perfil> listarContacto(int id) {
+		return perfilDAO.listarContacto(id);
+	}
+	
+	
 	
 	
 }

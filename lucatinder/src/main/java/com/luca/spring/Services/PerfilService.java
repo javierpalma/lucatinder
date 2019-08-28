@@ -1,5 +1,7 @@
 package com.luca.spring.Services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.luca.spring.model.Perfil;
@@ -11,4 +13,5 @@ public interface PerfilService{
 	public void addLike(int idPerfil, int idOtroPerfil);
 	public Perfil getPefil(int id);
 	public void crearPerfilFalso();
+	public List<Perfil> listarContacto(int id);
 }
