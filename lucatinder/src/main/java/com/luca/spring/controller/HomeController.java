@@ -113,6 +113,7 @@ public class HomeController {
 	  
 	  /**
 	   * Metodo genera perfiles falsos.
+	   * Method generate fake users for app
 	   * 
 	   * @return inicio.html. Metodo retorna un objeto de tipo String.
 	   * 					  Method return String object type.
@@ -152,6 +153,17 @@ public class HomeController {
 	      return "contacto.html";	      
 	   }
 	  
+	  /**
+	   * Metodo lista los Perfiles.
+	   * Method list all Perfil.
+	   * 
+	   * @param idPerfil. Metodo recibe un parametro de tipo Integer.
+	   * 				  Method get param type Integer.
+	   * @param model. Metodo recibe un parametro de tipo ModelMap.
+	   * 			   Method get param type ModelMap.
+	   * @return listado.html. Metodo retorna un objeto de tipo String.
+	   * 					   Method return String object type.
+	   */
 	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
 	  public String listar(@ModelAttribute("perfil") int idPerfil, ModelMap model) {
 		  logger.info("-- en Listado Perfil");	
@@ -161,6 +173,15 @@ public class HomeController {
 	      return "listado";
 	      
 	  }
+	  
+	  /**
+	   * 
+	   * @param model. Metodo recibe un parametro de tipo ModelMap.
+	   * 			   Method get param type ModelMap.
+	   * 
+	   * @return listado.html. Metodo retorna un objeto de tipo String.
+	   * 					   Method return String object type.
+	   */
 	  @RequestMapping(value = "/prueba", method = RequestMethod.GET)
 	  public String prueba(Model model) {
 		  logger.info("-- en Listado Perfil");	
