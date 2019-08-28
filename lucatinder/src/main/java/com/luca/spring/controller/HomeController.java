@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**
@@ -124,6 +126,23 @@ public class HomeController {
 	      return "inicio";
 	  }
 	  
-	  
+	  /**
+	   * @author Jose Miguel
+	   * @param cliente
+	   * @param model
+	   * @return contacto.html
+	   * 
+	   */
+	  @RequestMapping(value = "/", method = RequestMethod.GET)
+	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+		  logger.info("-- en Listado Contactos");	
+	      System.out.println("---- metodo Listar Contacto");
+	      int id = perfil.getIdPerfil();
+	      List<Perfil> listPerfil = perfilService.listarContacto(id);
+	      model.addAttribute("listPerfil",listPerfil);
+	      
+	      return "contacto.html";	      
+	   }
+	      	  
 
 }
