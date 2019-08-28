@@ -73,7 +73,7 @@ public class PerfilDAOImpl implements PerfilDAO {
 	 */
 	@SuppressWarnings( "unchecked" )
 	public List<Perfil> listarContacto(int id){
-		String hql ="SELECT c FROM Contacto c WHERE c.idPerfil =:id ";
+		String hql ="SELECT c FROM Contacto c WHERE c.idPerfil =:id";
         
         List<Contacto> listaContacto = entityManager.createQuery(hql).setParameter("id", id).getResultList();
 		List<Perfil> listaPerfil = new ArrayList();		
@@ -103,8 +103,8 @@ public class PerfilDAOImpl implements PerfilDAO {
 	@Transactional
 	public List<Perfil> listarPerfil(int idPerfil){
 		
-		String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id ";
-		List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).getResultList();
+		String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id";
+		List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).setMaxResults(20).getResultList();
 		System.out.println(listaPerfil);
 		return listaPerfil;
 	}
