@@ -6,6 +6,13 @@ import org.springframework.stereotype.Service;
 
 import com.luca.spring.model.Perfil;
 
+/**
+ * 
+ * Interface de tipo servicios que implementara PerfilServiceImpl
+ * Interface type servicios will implement 
+ *	
+ */
+
 @Service
 public interface PerfilService{
 	

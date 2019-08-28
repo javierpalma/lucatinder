@@ -24,7 +24,7 @@ public class Contacto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_contacto")
 	int idContacto;
-	int idPeril;
+	int idPerfil;
 	@Column(name = "id_otro_perfil")
 	int idOtroPerfil;
 	
@@ -41,11 +41,11 @@ public class Contacto implements Serializable {
 	}
 
 	public int getIdPeril() {
-		return idPeril;
+		return idPerfil;
 	}
 
 	public void setIdPeril(int idPeril) {
-		this.idPeril = idPeril;
+		this.idPerfil = idPeril;
 	}
 
 	public int getIdOtroPerfil() {
@@ -62,7 +62,7 @@ public class Contacto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Contacto [idContacto=" + idContacto + ", idPeril=" + idPeril + ", idOtroPerfil=" + idOtroPerfil + "]";
+		return "Contacto [idContacto=" + idContacto + ", idPeril=" + idPerfil + ", idOtroPerfil=" + idOtroPerfil + "]";
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class Contacto implements Serializable {
 		int result = 1;
 		result = prime * result + idContacto;
 		result = prime * result + idOtroPerfil;
-		result = prime * result + idPeril;
+		result = prime * result + idPerfil;
 		return result;
 	}
 
@@ -88,7 +88,7 @@ public class Contacto implements Serializable {
 			return false;
 		if (idOtroPerfil != other.idOtroPerfil)
 			return false;
-		if (idPeril != other.idPeril)
+		if (idPerfil != other.idPerfil)
 			return false;
 		return true;
 	}	

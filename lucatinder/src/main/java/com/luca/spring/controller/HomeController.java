@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -112,9 +113,11 @@ public class HomeController {
 		  	return new ModelAndView("redirect:/");
 		  }
 	  }
+	 
 	  
 	  /**
 	   * Metodo genera perfiles falsos.
+	   * Method generate fake users for app
 	   * 
 	   * @return inicio.html. Metodo retorna un objeto de tipo String.
 	   * 					  Method return String object type.
@@ -144,15 +147,26 @@ public class HomeController {
 	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		  logger.info("-- en Listado Contactos");	
 	      System.out.println("---- metodo Listar Contacto");
-	      //int id = perfil.getIdPerfil();
+	      int id = perfil.getIdPerfil();
 	      
-	      List<Perfil> listPerfil = perfilService.listarContacto(3);
+	      List<Perfil> listPerfil = perfilService.listarContacto(id);
 	      System.out.println("LISTA PERFIL---------"+ listPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
 	      
 	      return "contacto.html";	      
 	   }
 	  
+	  /**
+	   * Metodo lista los Perfiles.
+	   * Method list all Perfil.
+	   * 
+	   * @param idPerfil. Metodo recibe un parametro de tipo Integer.
+	   * 				  Method get param type Integer.
+	   * @param model. Metodo recibe un parametro de tipo ModelMap.
+	   * 			   Method get param type ModelMap.
+	   * @return listado.html. Metodo retorna un objeto de tipo String.
+	   * 					   Method return String object type.
+	   */
 	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
 	  //public String listar(@ModelAttribute("idPerfil") int idPerfil, ModelMap model) {
 		  public String listar(ModelMap model) {
@@ -167,6 +181,15 @@ public class HomeController {
 	      return "listado";
 	      
 	  }
+	  
+	  /**
+	   * 
+	   * @param model. Metodo recibe un parametro de tipo ModelMap.
+	   * 			   Method get param type ModelMap.
+	   * 
+	   * @return listado.html. Metodo retorna un objeto de tipo String.
+	   * 					   Method return String object type.
+	   */
 	  @RequestMapping(value = "/prueba", method = RequestMethod.GET)
 	  public String prueba(Model model) {
 		  logger.info("-- en Listado Perfil");	
