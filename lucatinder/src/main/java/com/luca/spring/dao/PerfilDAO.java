@@ -20,6 +20,6 @@ public interface PerfilDAO {
 	
 	public void addPerfil(Perfil perfil);
 	public void addLike(int idPerfil, int idOtroPerfil);
-	public Perfil getPefil(int id);
+	public Perfil getPerfil(int id);
 	public List<Perfil> listarContacto(int id);
 }

@@ -38,7 +38,7 @@ public class PerfilServiceImpl implements PerfilService {
 
 	@Override
 	public Perfil getPefil(int id) {
-		return perfilDAO.getPefil(id);
+		return perfilDAO.getPerfil(id);
 	}
 	
 	@Override

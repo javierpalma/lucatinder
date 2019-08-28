@@ -142,9 +142,9 @@ public class HomeController {
 	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		  logger.info("-- en Listado Contactos");	
 	      System.out.println("---- metodo Listar Contacto");
-	      //int id = perfil.getIdPerfil();
+	      int id = perfil.getIdPerfil();
 	      
-	      List<Perfil> listPerfil = perfilService.listarContacto(3);
+	      List<Perfil> listPerfil = perfilService.listarContacto(id);
 	      System.out.println("LISTA PERFIL---------"+ listPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
 	      

@@ -9,17 +9,24 @@
 		<table border="1">
 			<thead>
 				<tr>
-					<th>Nombre contacto</th>
+					<th>Nombre</th>
+					<th>Genero</th>
+					<th>Edad</th>
+					<th>Descripcion</th>
+					<th>Poblacion</th>
 				</tr>
 			</thead>
 			
 			<tbody>
-					<th:block th:each="contacto : ${listContactos}">
-					<tr>
-					<td th:text="${contacto.nombre}">Nombre contacto</td>
-					
-					</tr>
-					</th:block>
+					<th:block th:each="perfil : ${listPerfil}"> 
+				<tr>					
+					<td th:text="${perfil.nombre}">...</td>
+					<td th:text="${perfil.genero}">...</td>
+					<td th:text="${perfil.edad}">...</td>
+					<td th:text="${perfil.descripcion}">...</td>
+					<td th:text="${perfil.poblacion}">...</td>
+				</tr>
+			 </th:block> 
 
 			</tbody>
 		</table>

@@ -1,5 +1,6 @@
 package com.luca.spring.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -52,27 +53,37 @@ public class PerfilDAOImpl implements PerfilDAO {
 	 * @Return This method get Perfil when given id of user
 	 * 
 	 */
-	@Query("SELECT id, name, email FROM user WHERE id = ?")
-	public Perfil getPefil(int id) {
+	
+	public Perfil getPerfil(int id) {
 		
 		return entityManager.find(Perfil.class, id);
 	}
 	
 	/**
+	 *  metodo recibe el id del usuario que está logueado, y devuelve un listado de los perfiles a los que ha dado "me gusta"
+	 * Method get param userID who is logged and return list type of Perfil when its set "Like".
+	 * 
 	 * @author Javier Palma
-	 * metodo recibe el id del usuario que está logueado, y devuelve un listado de los perfiles a los que ha dado "me gusta"
+	 * @param id. Metodo recibe como parametro un id.
+	 * 			  Method get para id
+	 * @return listaPerfil. Metodo devuelve un listado de tipo ArrayList
+	 * 						Method return list type ArrayList  
 	 */
-	@SuppressWarnings("null")
+	@SuppressWarnings( "unchecked" )
 	public List<Perfil> listarContacto(int id){
-		String hql ="SELECT c FROM Contacto c WHERE Contacto.idPerfil = "+id;
-		System.out.println("---------------"+hql);
-		System.out.println(entityManager.createQuery(hql));
-		List<Contacto> listaContacto = entityManager.createQuery(hql).getResultList();
-		List<Perfil> listaPerfil = null;
+		String hql ="SELECT c FROM Contacto c WHERE c.idPerfil =:id ";
+        
+        List<Contacto> listaContacto = entityManager.createQuery(hql).setParameter("id", id).getResultList();
+		List<Perfil> listaPerfil = new ArrayList();		
 		for (int i = 0; i < listaContacto.size(); i++) {
-			int idOtroPerfil = listaContacto.get(i).getIdOtroPerfil();
-			listaPerfil.add(this.getPefil(idOtroPerfil));
+			int idOtroPerfil;
+			idOtroPerfil=listaContacto.get(i).getIdOtroPerfil();
+			System.out.println("ID OTRO PERFIL---"+idOtroPerfil);
+			Perfil p = this.getPerfil(idOtroPerfil);
+			System.out.println(p);
+			listaPerfil.add(p);			
 		}
 		return listaPerfil;
 	}
+
 }
