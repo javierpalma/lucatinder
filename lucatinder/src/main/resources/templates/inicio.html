@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,28 +13,37 @@
 
 <body>
     <div class="container">
-        <h1>BIENVENID@</h1>
-        <br>
-
-        <div class="row">
-        <form name="formulario1" th:action="@{/login}" th:object="${perfil}" method="POST">
-            <div class="form-group">
-                <label for="idPerfil">Introduce tu ID de usuario:</label>
-                <input type="text" class="form-control" th:field="*{idPerfil}">
-                <input type="submit" value="Continuar">
-            </div>
-        </form>
-        </div>
-
-
-
-
-        <div class="row">
+        <h1>BIENVENIDO A LUCATINDER</h1>
+    </div>
+	
+<div class="row">
+     <div class="container">
+     	<h2>INICIAR SESION</h2>
+   	 	<form class="form-inline" th:action="@{/login}" th:object="${perfil}" method="POST">
+     		<div class="form-group">
+      			<label for="id" th:text="#{form.perfil.id}">Id usuario:</label>
+      			<input type="text" th:field="*{idPerfil}" class="form-control" id="idPerfil" placeholder="Enter id" name="idPerfil">
+    		</div>
+    		<div class="form-group">
+     	 		<label for="pwd">Password:</label>
+      			<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+   		 	</div>
+    		<div>
+   		 		<input type="submit" value="Sign in" class="btn btn-default">
+   			</div>
+  		</form>
+    </div>	
+    <div class="row">
+    	<div><h1>REGISTRARSE EN LUCATINDER</h1></div>
             <form method="post" th:object="${perfil}" th:action="@{/addPerfil}">
                 <div class="form-group">
-                    <label for="nombre">Nombre Usuario</label>
+                <label class="col-md-4 control-label" for="nombre">Nombre Usuario</label><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  				<div class="col-md-4 inputGroupContainer">
+  				<div class="input-group">
                     <input type="text" class="form-control" th:field="*{nombre}">
                 </div>
+              </div>
+             </div>   
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="genero" id="genero1" value="Male" th:field="*{genero}" checked>
                   <label class="form-check-label" for="exampleRadios1">
@@ -52,6 +61,7 @@
                     <label for="edad">Edad</label>
                     <input type="text" class="form-control" th:field="*{edad}">
                 </div>
+                
                 <div class="form-group">
                     <label for="descipcion">Descripcion</label>
                     <input type="text" class="form-control" th:field="*{descripcion}">
@@ -60,6 +70,7 @@
                     <label for="poblacion">Poblacion</label>
                     <input type="text" class="form-control" th:field="*{poblacion}">
                 </div>
+                <div class="genero">Genero de interes</div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="genero" id="genero1" value="Male" th:field="*{generoInteres}" checked>
                   <label class="form-check-label" for="exampleRadios1">
@@ -74,21 +85,30 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="edadMinima">Edad Minima</label>
+                    <label for="edadMinima">Busquedas por edad minima:</label>
                     <input type="text" class="form-control" th:field="*{edadMinima}">
                 </div>
                 <div class="form-group">
-                    <label for="edadMaxima">Edad Maxima</label>
+                    <label for="edadMaxima">Busquedas por edad maxima</label>
                     <input type="text" class="form-control" th:field="*{edadMaxima}">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Dar de alta" />
                 </div>
 
-                </div>
+
+				<div class="form-group">
+  				<label class="col-md-4 control-label"></label>
+  				<div class="col-md-4"><br>
+   				<button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+  				</div>
+				</div>
+                
             </form>
         </div>
     </div>
+    
+    
 </body>
 
 </html>
