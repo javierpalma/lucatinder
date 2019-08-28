@@ -173,7 +173,7 @@ public class HomeController {
 		  
 		  logger.info("-- en Listado Perfil");
 		  logger.info("-- idPerfil: "+model.get("idPerfil"));
-		  Integer idPerfil=3;
+		  Integer idPerfil=1;
 		  System.out.println("---------------"+idPerfil);
 	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
 	      model.addAttribute("listPerfil",listPerfil);

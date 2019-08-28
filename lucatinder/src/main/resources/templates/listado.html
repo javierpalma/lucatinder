@@ -14,12 +14,7 @@
 					<th>Edad</th>
 					<th>Descripcion</th>
 					<th>Poblacion</th>
-					<th>Nombre contacto</th>
-					<th>Genero contacto</th>
-					<th>Edad contacto</th>
-					<th>Descripcion contacto</th>
-					<th>Poblacion contacto</th>
-					<th>Genero de interes de contacto</th>
+				
 				</tr>
 			</thead>
 			
@@ -32,16 +27,8 @@
 					<td th:text="${perfil.edad}">...</td>
 					<td th:text="${perfil.descripcion}">...</td>
 					<td th:text="${perfil.poblacion}">...</td>
-				</tr>
-			 </th:block> 
-					<th:block th:each="contacto : ${listPerfil}">
-					<tr>
-					<td th:text="${contacto.nombre}">Nombre contacto</td>
-					<td th:text="${contacto.genero}">Genero contacto</td>
-					<td th:text="${contacto.edad}">Edad contacto</td>
-					<td th:text="${contacto.descripcion}">Descripcion contacto</td>
-					<td th:text="${contacto.poblacion}">Poblacion contacto</td>
-					<td th:text="${contacto.generoInteres}">Genero de interes de contacto</td>
+
+			 
 					
 					</tr>
 					</th:block>
