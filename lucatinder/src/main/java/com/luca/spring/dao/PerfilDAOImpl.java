@@ -58,8 +58,10 @@ public class PerfilDAOImpl implements PerfilDAO {
 		return entityManager.find(Perfil.class, id);
 	}
 	
+	@SuppressWarnings("null")
 	public List<Perfil> listarContacto(int id){
 		String hql ="SELECT c FROM Contacto c WHERE Contacto.idPerfil = "+id;
+		@SuppressWarnings("unchecked")
 		List<Contacto> listaContacto = entityManager.createQuery(hql).getResultList();
 		List<Perfil> listaPerfil = null;
 		for (int i = 0; i < listaContacto.size(); i++) {
@@ -67,5 +69,4 @@ public class PerfilDAOImpl implements PerfilDAO {
 		}
 		return listaPerfil;
 	}
-
 }
