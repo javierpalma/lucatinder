@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Listado de Contactos</title>
+</head>
+<body>
+	<div id="contenedor">
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+			<th:block th:each="perfil : ${listPerfil}"> 
+				<tr>					
+					<td th:text="${perfil.nombre}">...</td>
+					<td th:text="${perfil.genero}">...</td>
+					<td th:text="${perfil.edad}">...</td>
+					<td th:text="${perfil.descripcion}">...</td>
+					<td th:text="${perfil.poblacion}">...</td>
+					<td th:text="${perfil.generoInteres}">...</td>
+					<td th:text="${perfil.edadMinima}">...</td>
+					<td th:text="${perfil.edadMaxima}">...</td>
+					<td><a th:href="@{/delete(id=${perfil.id})}">Eliminar</a></td>
+					<td><a th:href="@{/edit(id=${perfil.id})}">Editar</a></td>
+				</tr>
+			 </th:block> 
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
