@@ -25,6 +25,72 @@
        
        
    </form>
+   
+   <div align="center">
+		<h1>LISTADO DE USUARIOS</h1>
+		<p>Estos son los datos de la tabla de usuarios</p>
+
+		<table border="1">
+			<tr>
+				<th>Nº</th>
+				<th>Usuario</th>
+				<th>Password</th>
+				<th>Email</th>
+			</tr>
+
+				<tr>
+					<td>NUMERO</td>
+					<td>USUARIO</td>
+					<td><em>PASS</em></td>
+					<td>EMAIL</td>
+				</tr>
+		</table>
+		
+				<form 
+				method="post" 
+				th:object="${perfil}"
+				th:action="@{/addPerfil}"
+				>
+			<table>
+				<tr>
+					<td><label for="idPerfil">idPerfil</label></td>
+					<td><input type="text" th:field="*{idPerfil}" /></td> <!-- SE PODRÍA ESCONDER PORQUE ES INCREMENTAL -->
+				</tr>
+				<tr>
+					<td><label for="nombre">Nombre Usuario</label></td>
+					<td><input type="text" th:field="*{nombre}" /></td>
+				</tr>
+				<tr>
+					<td><label for="genero">Género</label></td>
+					<td><input type="text" th:field="*{genero}" /></td>
+				</tr>
+				<tr>
+					<td><label for="edad">Edad</label></td>
+					<td><input type="text" th:field="*{edad}" /></td>
+				</tr>
+								<tr>
+					<td><label for="descripcion">Descripción</label></td>
+					<td><input type="text" th:field="*{descripcion}" /></td> <!-- SE PODRÍA ESCONDER PORQUE ES INCREMENTAL -->
+				</tr>
+				<tr>
+					<td><label for="poblacion">Población</label></td>
+					<td><input type="text" th:field="*{poblacion}" /></td>
+				</tr>
+				<tr>
+					<td><label for="generoInteres">Genero Interés</label></td>
+					<td><input type="text" th:field="*{generoInteres}" /></td>
+				</tr>
+				<tr>
+					<td><label for="edadMinima">Edad Mínima</label></td>
+					<td><input type="text" th:field="*{edadMinima}" /></td>
+				</tr>
+			</table>
+			<br />
+			<p>
+				<input type="submit" value="Dar de alta" />
+			</p>
+		</form>
+	</div>
     
 </body>
 </html>
