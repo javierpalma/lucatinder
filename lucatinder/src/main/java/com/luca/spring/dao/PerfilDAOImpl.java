@@ -91,10 +91,10 @@ public class PerfilDAOImpl implements PerfilDAO {
 	@Override
 	@Transactional
 	public List<Perfil> listarPerfil(int idPerfil){
-		String hql ="SELECT p FROM Perfil p WHERE Perfil.idPerfil != "+idPerfil+"LIMIT 20";
-		System.out.println("---------------"+hql);
-		System.out.println(entityManager.createQuery(hql));
-		List<Perfil> listaPerfil = entityManager.createQuery(hql).getResultList();
+		
+		String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id ";
+		List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).getResultList();
+		System.out.println(listaPerfil);
 		return listaPerfil;
 	}
 }
