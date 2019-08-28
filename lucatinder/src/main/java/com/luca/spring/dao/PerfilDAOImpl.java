@@ -1,5 +1,7 @@
 package com.luca.spring.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.Query;
@@ -56,5 +58,14 @@ public class PerfilDAOImpl implements PerfilDAO {
 		return entityManager.find(Perfil.class, id);
 	}
 	
+	public List<Perfil> listarContacto(int id){
+		String hql ="SELECT c FROM Contacto c WHERE Contacto.idPerfil = "+id;
+		List<Contacto> listaContacto = entityManager.createQuery(hql).getResultList();
+		List<Perfil> listaPerfil = null;
+		for (int i = 0; i < listaContacto.size(); i++) {
+			listaPerfil.add(this.getPefil(listaContacto.get(i).getIdOtroPerfil()));
+		}
+		return listaPerfil;
+	}
 
 }

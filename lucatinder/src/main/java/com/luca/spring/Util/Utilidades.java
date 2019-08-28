@@ -16,7 +16,7 @@ public class Utilidades {
 		  //for (int i = 0; i < 20; i++) {
 			
 			 
-		    Perfil perfil = new Perfil(faker.name().firstName(),faker.demographic().sex(),(int)(Math.random()*10),faker.lorem().characters(),faker.address().cityName(),faker.demographic().sex(), (int)(Math.random()*10), (int)(Math.random()*10));
+		    Perfil perfil = new Perfil(faker.name().firstName(),faker.demographic().sex(),(int)(Math.random()*10),"Soy super cool y super fake",faker.address().cityName(),faker.demographic().sex(), (int)(Math.random()*10), (int)(Math.random()*10));
 		    
 		    //entityManager.merge(user);
 		    
