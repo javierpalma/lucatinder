@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
@@ -97,17 +99,17 @@ public class HomeController {
 	   * 
 	   */
 	  @RequestMapping(value="/login", method = RequestMethod.POST)
-	  public String loggin(@RequestParam("idPerfil") Integer idPerfil, Perfil perfil, ModelMap model) {
+	  public ModelAndView loggin(@RequestParam("idPerfil") Integer idPerfil, Perfil perfil, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  model.addAttribute(perfil);
 		  model.addAttribute(idPerfil);
 		  if(perfilService.getPefil(idPerfil)!=null) {
 			  logger.info("------------ Usuario encontrado ");
-			  return "listado";
+			  return new ModelAndView("redirect:/listado");
 		  }
 		  else {
 			  logger.warn("--------- Usuario no encontrado ");
-		  	return "inicio";
+		  	return new ModelAndView("redirect:/");
 		  }
 	  }
 	  
@@ -121,8 +123,7 @@ public class HomeController {
 	  public String generarPerfilFalso() { 
 		  logger.info("-- Registrando perfil falso");
 	      System.out.println("-- metodo generarPerfilFalso");
-	      //System.out.println("--------"+perfil);	      
-	      //model.addAttribute(perfil);
+	      
 	      perfilService.crearPerfilFalso();
 	      return "inicio";
 	  }
@@ -153,11 +154,16 @@ public class HomeController {
 	   }
 	  
 	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
-	  public String listar(@ModelAttribute("perfil") int idPerfil, ModelMap model) {
-		  logger.info("-- en Listado Perfil");	
+	  //public String listar(@ModelAttribute("idPerfil") int idPerfil, ModelMap model) {
+		  public String listar(ModelMap model) {
+		  
+		  logger.info("-- en Listado Perfil");
+		  logger.info("-- idPerfil: "+model.get("idPerfil"));
+		  Integer idPerfil=3;
+		  System.out.println("---------------"+idPerfil);
 	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
-	      System.out.println(listPerfil);
+	      System.out.println("------------------"+listPerfil);
 	      return "listado";
 	      
 	  }
