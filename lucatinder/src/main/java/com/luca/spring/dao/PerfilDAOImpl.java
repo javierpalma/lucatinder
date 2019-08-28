@@ -58,6 +58,10 @@ public class PerfilDAOImpl implements PerfilDAO {
 		return entityManager.find(Perfil.class, id);
 	}
 	
+	/**
+	 * @author Javier Palma
+	 * metodo recibe el id del usuario que está logueado, y devuelve un listado de los perfiles a los que ha dado "me gusta"
+	 */
 	@SuppressWarnings("null")
 	public List<Perfil> listarContacto(int id){
 		String hql ="SELECT c FROM Contacto c WHERE Contacto.idPerfil = "+id;
