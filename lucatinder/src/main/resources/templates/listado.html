@@ -10,12 +10,22 @@
 			<thead>
 				<tr>
 					<th>Nombre contacto</th>
+					<th>Nombre contacto</th>
+					<th>Nombre contacto</th>
+					<th>Nombre contacto</th>
+					<th>Nombre contacto</th>
+					<th>Nombre contacto</th>
 				</tr>
 			</thead>
 			
 			<tbody>
 					<th:block th:each="contacto : ${listContactos}">
 					<tr>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
 					<td th:text="${contacto.nombre}">Nombre contacto</td>
 					
 					</tr>
