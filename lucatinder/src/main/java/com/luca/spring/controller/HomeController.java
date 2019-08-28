@@ -6,9 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
@@ -92,18 +93,19 @@ public class HomeController {
 	   * @date 27/08/19
 	   * 
 	   */
-	  @RequestMapping(value="/login/{id}", method = RequestMethod.POST)
-	  public String loggin(@PathVariable("id") Integer id, ModelMap model) {
+	  @RequestMapping(value="/login", method = RequestMethod.POST)
+	  public String loggin(@RequestParam("idPerfil") Integer idPerfil, Perfil perfil, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
-		  
-		  model.addAttribute(id);
-		  if(perfilService.getPefil(id)!=null) {
+		  model.addAttribute(perfil);
+		  model.addAttribute(idPerfil);
+		  if(perfilService.getPefil(idPerfil)!=null) {
 			  logger.info("------------ Usuario encontrado ");
 			  return "listado";
 		  }
-		  
-		  logger.warn("--------- Usuario no encontrado ");
-		  return "inicio";
+		  else {
+			  logger.warn("--------- Usuario no encontrado ");
+		  	return "inicio";
+		  }
 	  }
 	  
 	  @RequestMapping(value = "/aleatorio", method = RequestMethod.GET)
