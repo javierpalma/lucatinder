@@ -128,7 +128,7 @@ public class HomeController {
 	   * 
 	   */
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
-	  public String initForm(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		  logger.info("-- en Listado Contactos");	
 	      System.out.println("---- metodo Listar Contacto");
 	      int id = perfil.getIdPerfil();
