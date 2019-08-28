@@ -81,7 +81,7 @@ public class HomeController {
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");
-	      return "InicioFacebook.html";
+	      return "inicio.html";
 	  }
 	  
 	  /**
