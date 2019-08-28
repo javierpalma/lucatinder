@@ -41,8 +41,7 @@ public class PerfilServiceImpl implements PerfilService {
 	
 	@Override
 	public void crearPerfilFalso() {
-		for (int i = 0; i < 20; i++) {
-			
+		for (int i = 0; i < 20; i++) {			
 			perfilDAO.addPerfil(Utilidades.crearPerfilFalso()); //el metodo addPerfilFalso no esta creado en DAO
 		}
 	}

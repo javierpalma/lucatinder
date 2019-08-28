@@ -1,7 +1,5 @@
 package com.luca.spring.Util;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -18,7 +16,7 @@ public class Utilidades {
 		  //for (int i = 0; i < 20; i++) {
 			
 			 
-		    Perfil perfil = new Perfil(faker.idNumber().hashCode(),faker.name().firstName(),"nombre",23,"description",faker.address().cityName());
+		    Perfil perfil = new Perfil(faker.name().firstName(),faker.demographic().sex(),(int)(Math.random()*10),faker.lorem().characters(),faker.address().cityName(),faker.demographic().sex(), (int)(Math.random()*10), (int)(Math.random()*10));
 		    
 		    //entityManager.merge(user);
 		    
