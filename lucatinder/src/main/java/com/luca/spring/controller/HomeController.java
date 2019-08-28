@@ -110,6 +110,12 @@ public class HomeController {
 		  }
 	  }
 	  
+	  /**
+	   * Metodo genera perfiles falsos.
+	   * 
+	   * @return inicio.html. Metodo retorna un objeto de tipo String.
+	   * 					  Method return String object type.
+	   */
 	  @RequestMapping(value = "/aleatorio", method = RequestMethod.GET)
 	  public String generarPerfilFalso() { 
 		  logger.info("-- Registrando perfil falso");
@@ -122,9 +128,14 @@ public class HomeController {
 	  
 	  /**
 	   * @author Jose Miguel
-	   * @param cliente
-	   * @param model
-	   * @return contacto.html
+	   * @param perfil. Metodo recibe como parametro un objeto de tipo Perfil.
+	   * 				Method get param object type Perfil.
+	   * 
+	   * @param model. Metodo recibe como parametro un objeto de tipo ModelMap.
+	   * 			   Method get param object type ModelMap.
+	   * 
+	   * @return contacto.html. Metodo retorna un objeto de tipo String.
+	   * 						Method return String object type.
 	   * 
 	   */
 	  @RequestMapping(value = "/contacto", method = RequestMethod.GET)
