@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**
@@ -75,7 +77,7 @@ public class HomeController {
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");
-	      return "inicio";
+	      return "inicio.html";
 	  }
 	  
 	  /**
@@ -108,6 +110,12 @@ public class HomeController {
 		  }
 	  }
 	  
+	  /**
+	   * Metodo genera perfiles falsos.
+	   * 
+	   * @return inicio.html. Metodo retorna un objeto de tipo String.
+	   * 					  Method return String object type.
+	   */
 	  @RequestMapping(value = "/aleatorio", method = RequestMethod.GET)
 	  public String generarPerfilFalso() { 
 		  logger.info("-- Registrando perfil falso");
@@ -118,6 +126,30 @@ public class HomeController {
 	      return "inicio";
 	  }
 	  
-	  
+	  /**
+	   * @author Jose Miguel
+	   * @param perfil. Metodo recibe como parametro un objeto de tipo Perfil.
+	   * 				Method get param object type Perfil.
+	   * 
+	   * @param model. Metodo recibe como parametro un objeto de tipo ModelMap.
+	   * 			   Method get param object type ModelMap.
+	   * 
+	   * @return contacto.html. Metodo retorna un objeto de tipo String.
+	   * 						Method return String object type.
+	   * 
+	   */
+	  @RequestMapping(value = "/contacto", method = RequestMethod.GET)
+	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+		  logger.info("-- en Listado Contactos");	
+	      System.out.println("---- metodo Listar Contacto");
+	      //int id = perfil.getIdPerfil();
+	      
+	      List<Perfil> listPerfil = perfilService.listarContacto(3);
+	      System.out.println("LISTA PERFIL---------"+ listPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      
+	      return "contacto.html";	      
+	   }
+	      	  
 
 }

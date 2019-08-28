@@ -65,7 +65,8 @@ public class PerfilDAOImpl implements PerfilDAO {
 	@SuppressWarnings("null")
 	public List<Perfil> listarContacto(int id){
 		String hql ="SELECT c FROM Contacto c WHERE Contacto.idPerfil = "+id;
-		@SuppressWarnings("unchecked")
+		System.out.println("---------------"+hql);
+		System.out.println(entityManager.createQuery(hql));
 		List<Contacto> listaContacto = entityManager.createQuery(hql).getResultList();
 		List<Perfil> listaPerfil = null;
 		for (int i = 0; i < listaContacto.size(); i++) {
