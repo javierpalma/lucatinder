@@ -10,6 +10,11 @@
 			<thead>
 				<tr>
 					<th>Nombre contacto</th>
+					<th>Genero contacto</th>
+					<th>Edad contacto</th>
+					<th>Descripcion contacto</th>
+					<th>Poblacion contacto</th>
+					<th>Genero de interes de contacto</th>
 				</tr>
 			</thead>
 			
@@ -17,6 +22,11 @@
 					<th:block th:each="contacto : ${listContactos}">
 					<tr>
 					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					<td th:text="${contacto.genero}">Genero contacto</td>
+					<td th:text="${contacto.edad}">Edad contacto</td>
+					<td th:text="${contacto.descripcion}">Descripcion contacto</td>
+					<td th:text="${contacto.poblacion}">Poblacion contacto</td>
+					<td th:text="${contacto.generoInteres}">Genero de interes de contacto</td>
 					
 					</tr>
 					</th:block>

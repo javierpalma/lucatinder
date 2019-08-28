@@ -150,6 +150,15 @@ public class HomeController {
 	      
 	      return "contacto.html";	      
 	   }
-	      	  
-
+	  
+	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
+	  public String listar(@ModelAttribute("perfil") int idPerfil, ModelMap model) {
+		  logger.info("-- en Listado Perfil");	
+	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      
+	      return "listado";
+	      
+	  }
+	
 }
