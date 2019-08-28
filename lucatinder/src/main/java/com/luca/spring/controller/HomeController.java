@@ -77,7 +77,7 @@ public class HomeController {
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");
-	      return "inicio";
+	      return "inicio.html";
 	  }
 	  
 	  /**
@@ -127,12 +127,14 @@ public class HomeController {
 	   * @return contacto.html
 	   * 
 	   */
-	  @RequestMapping(value = "/", method = RequestMethod.GET)
+	  @RequestMapping(value = "/contacto", method = RequestMethod.GET)
 	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
 		  logger.info("-- en Listado Contactos");	
 	      System.out.println("---- metodo Listar Contacto");
-	      int id = perfil.getIdPerfil();
-	      List<Perfil> listPerfil = perfilService.listarContacto(id);
+	      //int id = perfil.getIdPerfil();
+	      
+	      List<Perfil> listPerfil = perfilService.listarContacto(3);
+	      System.out.println("LISTA PERFIL---------"+ listPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
 	      
 	      return "contacto.html";	      

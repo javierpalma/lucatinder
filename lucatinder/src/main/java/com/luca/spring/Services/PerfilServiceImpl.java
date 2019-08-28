@@ -50,6 +50,7 @@ public class PerfilServiceImpl implements PerfilService {
 
 	@Override
 	public List<Perfil> listarContacto(int id) {
+		System.out.println("SERVICE LISTAR CONTACTO");
 		return perfilDAO.listarContacto(id);
 	}
 	
