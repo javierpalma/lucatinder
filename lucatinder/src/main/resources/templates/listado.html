@@ -3,5 +3,25 @@
   xmlns:th="http://www.thymeleaf.org"   
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+<body>
+	<h2> HOLA MUNDO, AQUI VA UN LISTADO DE LOS PERFILES PARA DAR LIKE</h2>
+<div align="center">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Nombre contacto</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+					<th:block th:each="contacto : ${listContactos}">
+					<tr>
+					<td th:text="${contacto.nombre}">Nombre contacto</td>
+					
+					</tr>
+					</th:block>
 
-<h2> HOLA MUNDO, AQUI VA UN LISTADO DE LOS PERFILES PARA DAR LIKE</h2>
+			</tbody>
+		</table>
+	</div>
+</body>

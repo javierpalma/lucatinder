@@ -108,6 +108,12 @@ public class HomeController {
 		  }
 	  }
 	  
+	  /**
+	   * Metodo genera perfiles falsos.
+	   * 
+	   * @return inicio.html. Metodo retorna un objeto de tipo String.
+	   * 					  Method return String object type.
+	   */
 	  @RequestMapping(value = "/aleatorio", method = RequestMethod.GET)
 	  public String generarPerfilFalso() { 
 		  logger.info("-- Registrando perfil falso");
