@@ -53,7 +53,4 @@ public class PerfilServiceImpl implements PerfilService {
 		return perfilDAO.listarContacto(id);
 	}
 	
-	
-	
-	
 }
