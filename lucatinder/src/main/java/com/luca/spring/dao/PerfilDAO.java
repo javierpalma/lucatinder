@@ -22,4 +22,5 @@ public interface PerfilDAO {
 	public void addLike(int idPerfil, int idOtroPerfil);
 	public Perfil getPefil(int id);
 	public List<Perfil> listarContacto(int id);
+	public List<Perfil> listarPerfil(int id);
 }
