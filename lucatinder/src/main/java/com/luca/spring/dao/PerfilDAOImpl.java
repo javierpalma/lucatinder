@@ -78,6 +78,15 @@ public class PerfilDAOImpl implements PerfilDAO {
 		return listaPerfil;
 	}
 	
+	/**
+	 * @author Asiel
+	 * @name listarPerfil
+	 * @description El metodo obtiene 20 perfiles de la BD distintos al id del usuario
+	 * @date 28/08/19
+	 * @version 1.0
+	 * @return Devuelve un List<Perfil> con los 20 perfiles
+	 */
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional
