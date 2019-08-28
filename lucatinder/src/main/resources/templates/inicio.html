@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-   <p>PAgina de inicio</p>
+   <h1>Página de inicio</h1>
    <br>
-   <form name="formulario1" th:action="@{/login/#{id}}"  method="POST">
+   <form name="formulario1" th:action="@{/login}" th:object="${perfil}"  method="POST">
        
-        <table>
+        <table align="center">
             <tr>
-                <td><label >Introduce tu ID de usuario:</label></td>
-                <td><input type="text"></td>
+                <td><label for="idPerfil">Introduce tu ID de usuario:</label></td>
+                <td><input type="text"  th:field="*{idPerfil}"></td>
             </tr>
             <tr>
                 <td>
