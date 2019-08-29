@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
  *  
  */
 @Controller
-@ComponentScan("/resources/templates/")
 public class HomeController {
 	@Autowired
 	private PerfilService perfilService;

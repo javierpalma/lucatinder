@@ -22,20 +22,14 @@
      	<h2>INICIAR SESION</h2>
    	 	<form class="form-inline" th:action="@{/login}" th:object="${perfil}" method="POST">
      		<div class="form-group">
-      			<label for="id" th:text="#{form.perfil.id}">Id usuario:</label>
+      			<label for="id">Id usuario:</label>
       			<input type="text" th:field="*{idPerfil}" class="form-control" id="idPerfil" placeholder="Enter id" name="idPerfil">
     		</div>
-    		<div class="form-group">
-     	 		<label for="pwd">Password:</label>
-      			<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-   		 	</div>
     		<div>
    		 		<input type="submit" value="Sign in" class="btn btn-default">
    			</div>
   		</form>
-    </div>	
-   
-    <div class="container">
+
     	 <h3>REGISTRARSE EN LUCATINDER</h3>
     	 <br><br>
             <form method="post" th:object="${perfil}" th:action="@{/addPerfil}">
@@ -48,13 +42,11 @@
               </div>
              </div>   
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="generoMasc" id="genero1" value="Male" th:field="*{genero}">
+                  <input class="form-check-input" type="radio" name="genero" id="hombre" value="Male" th:field="*{genero}" checked>
                   <label class="form-check-label" for="exampleRadios1">
                     Hombre
                   </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="genero" id="genero2" value="Female" th:field="*{genero}">
+                  <input class="form-check-input" type="radio" name="genero" id="mujer" value="Female" th:field="*{genero}">
                   <label class="form-check-label" for="exampleRadios2">
                     Mujer
                   </label>
