@@ -7,12 +7,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.luca.spring.model.Contacto;
 import com.luca.spring.model.Perfil;
 
+/**
+ * 
+ * @Author
+ *
+ */
 @Repository
 public class PerfilDAOImpl implements PerfilDAO {
 	@PersistenceContext
@@ -49,11 +53,17 @@ public class PerfilDAOImpl implements PerfilDAO {
 	}
 
 	/**
-	 * @author Vladimir Juan
-	 *
-	 * @Return Este metodo nos permite seleccionar el perfil segun el id proporcionado.
-	 * @Return This method get Perfil when given id of user
 	 * 
+	 * Este metodo nos permite seleccionar el perfil segun el id proporcionado.
+	 * Method allows select profile by id getted.
+	 * 
+	 * @author Vladimir Juan
+	 * 
+	 * @param id. Metodo recibe parametro id de tipo int.
+	 * 			  Method get parameter id integer type.	
+	 * @return Perfil. Método retorna un Perfil.
+	 * 				   Method return Perfil.		  
+	 *  
 	 */
 	
 	public Perfil getPerfil(int id) {
@@ -62,10 +72,11 @@ public class PerfilDAOImpl implements PerfilDAO {
 	}
 	
 	/**
-	 *  metodo recibe el id del usuario que está logueado, y devuelve un listado de los perfiles a los que ha dado "me gusta"
+	 * Método recibe el id del usuario que está logueado, y devuelve un listado de los perfiles a los que ha dado "me gusta".
 	 * Method get param userID who is logged and return list type of Perfil when its set "Like".
 	 * 
-	 * @author Javier Palma
+	 * @author Javier Palma.
+	 * 
 	 * @param id. Metodo recibe como parametro un id.
 	 * 			  Method get para id
 	 * @return listaPerfil. Metodo devuelve un listado de tipo ArrayList
@@ -90,12 +101,19 @@ public class PerfilDAOImpl implements PerfilDAO {
 
 
 	/**
-	 * @author Asiel
-	 * @name listarPerfil
-	 * @description El metodo obtiene 20 perfiles de la BD distintos al id del usuario
-	 * @date 28/08/19
-	 * @version 1.0
-	 * @return Devuelve un List<Perfil> con los 20 perfiles
+	 * El metodo obtiene 20 perfiles de la BD distintos al id del usuario.
+	 * 
+	 * @author Asiel.
+	 * 
+	 * @date 28/08/19.
+	 * 
+	 * @version 1.0.
+	 *
+	 * @param idPerfil. Metodo recibe como parametro un id de perfil de tipo int.
+	 * 					Method get param profile id integer type. 
+	 *
+	 * @return listaPerfil. Metodo retorna una lista con los 20 perfiles.
+	 * 						Method return list with 20 profiles. 
 	 */
 	
 	@SuppressWarnings("unchecked")
