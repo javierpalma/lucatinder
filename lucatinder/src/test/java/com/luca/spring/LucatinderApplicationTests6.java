@@ -28,8 +28,8 @@ public class LucatinderApplicationTests6 {
     @Test
     public void testHtml() throws Exception {
         this.mockMvc
-        .perform(get("inicio.html"))
+        .perform(get("/inicio.html"))
         .andDo(print())
-        .andExpect(status().isNotFound());
+        .andExpect(status().isOk());
     }
 }
