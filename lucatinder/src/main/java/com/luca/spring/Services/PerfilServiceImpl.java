@@ -30,8 +30,8 @@ public class PerfilServiceImpl implements PerfilService {
 	 * Metodo añade un objeto Perfil.
 	 * Method add one object type Perfil.
 	 */
-	public void addPerfil(Perfil perfil) {
-		perfilDAO.addPerfil(perfil);
+	public Perfil addPerfil(Perfil perfil) {
+		return perfilDAO.addPerfil(perfil);
 	}
 
 	/**

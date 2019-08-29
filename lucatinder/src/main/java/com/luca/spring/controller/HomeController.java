@@ -58,13 +58,13 @@ public class HomeController {
 	 * @version 1.0
 	 */
 	  @RequestMapping(value = "/addPerfil", method = RequestMethod.POST)
-	  public String altaPerfil(@ModelAttribute("perfil") Perfil perfil, ModelMap model) { 
+	  public ModelAndView altaPerfil(@ModelAttribute("perfil") Perfil perfil, ModelMap model) { 
 		  logger.info("-- Registrando");
 	      System.out.println("-- metodo addCliente");
 	      System.out.println("--------"+perfil);	      
 	      model.addAttribute(perfil);
-	      perfilService.addPerfil(perfil);
-	      return "listado";
+	      perfil=perfilService.addPerfil(perfil);
+	      return new ModelAndView("redirect:/listado/"+perfil.getIdPerfil());
 	  }
 	  
 	  /**
@@ -81,6 +81,11 @@ public class HomeController {
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");
 	      return "index.html";
+	  }
+	  @RequestMapping(value = "/registrar", method = RequestMethod.GET)
+	  public String registrar(@ModelAttribute("perfil") Perfil perfil) {
+		  logger.info("-- en Registrar");
+	      return "registrar.html";
 	  }
 	  
 	  /**
@@ -114,7 +119,7 @@ public class HomeController {
 			  }
 			  else {
 				  logger.warn("--------- Usuario no encontrado ");
-			  	return new ModelAndView("redirect:/");
+			  	return new ModelAndView("redirect:/registrar");
 			  }
 		  
 	  }

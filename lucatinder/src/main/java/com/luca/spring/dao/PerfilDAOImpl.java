@@ -35,8 +35,8 @@ public class PerfilDAOImpl implements PerfilDAO {
 	 * @version 1.0
 	 * @param perfil
 	 */
-	public void addPerfil(Perfil perfil) {
-		entityManager.merge(perfil);
+	public Perfil addPerfil(Perfil perfil) {
+		return (Perfil)entityManager.merge(perfil);
 	}
 
 	/**
