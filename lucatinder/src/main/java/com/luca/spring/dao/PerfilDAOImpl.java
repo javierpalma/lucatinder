@@ -103,8 +103,9 @@ public class PerfilDAOImpl implements PerfilDAO {
 	@Transactional
 	public List<Perfil> listarPerfil(int idPerfil){
 		
-		String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id";
-		List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).setMaxResults(20).getResultList();
+		 Perfil p= this.getPerfil(idPerfil);
+		 String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id AND p.generoInteres=:gi ORDER BY RAND()";
+			List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).setParameter("gi", p.getGeneroInteres()).setMaxResults(20).getResultList();
 		System.out.println(listaPerfil);
 		return listaPerfil;
 	}

@@ -8,21 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.luca.spring.Services.PerfilServiceImpl;
 import com.luca.spring.controller.HomeController;
 import com.luca.spring.dao.PerfilDAOImpl;
 import com.luca.spring.model.Perfil;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LucatinderApplicationTests2 {
+public class LucatinderApplicationTests3 {
 
 	 @Autowired
-	 private PerfilDAOImpl repository;
+	 private PerfilServiceImpl service;
 	
 	@Test
 	public void contextLoads() {
-		//controla que el repository exista
+		//controla que el service exista
     	
-    	assertThat(repository).isNotNull();
+    	assertThat(service).isNotNull();
 	}
 }
