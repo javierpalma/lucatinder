@@ -1,0 +1,16 @@
+ABSTRACT ES
+
+Se estudio el mercado de la redes sociales y se decide hacer una aplicacion para las personas dedicadas a los  a la informatica.
+
+Se propone una nueva red social para conectar a los trabajadores de Luca Tic, mediante un sistema de "Me gusta" y "No me gusta" con imagenes.
+
+El usuario inicia sesion con su id de perfil, si no esta registrado se prodra registrar gratuitamente, una vez accedido al perfil, se muestra otra pagina donde aparecen todos los perfiles con un sistema de  "cards", pudiendo cambiar el perfil mostrado aplicando a los botones  "Me gusta" y "No me gusta".
+
+Cuando dos perfiles se dan like mutuamente se asocia en un listado de Match. Este listado, permite utilizar un sistema de chat privado, hasta que no se da un match no se premite el chat. Además dando "No me gusta" ese perfil no se vuelve a mostrar, se guarda en una lista "No me gusta". Los chats se guardan en una BBDD pues en un futuro puede ser que los necesitemos recuperar. 
+
+Las tecnologias utilizadas son Spring Frameworks con una parte MVC(modelo-vista-controlador) usando servicios Rest con Angular Framework para "quemar"(usar) los objetos. 
+Para la parte de vista usamos bootstrap 4 con estilos css del propio bootstrap para crear una pagina "responsive Web" implementando thymeleaf como base para recuperar, mostrar datos de los objetos.
+
+
+
+ABSTRACT EN
