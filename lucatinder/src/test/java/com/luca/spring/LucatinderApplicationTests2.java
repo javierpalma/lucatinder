@@ -9,19 +9,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.luca.spring.controller.HomeController;
+import com.luca.spring.dao.PerfilDAOImpl;
 import com.luca.spring.model.Perfil;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LucatinderApplicationTests {
+public class LucatinderApplicationTests2 {
 
 	 @Autowired
-	 private HomeController controller;
+	 private PerfilDAOImpl repository;
 	
 	@Test
 	public void contextLoads() {
 		//controla que el controller exista
     	
-    	assertThat(controller).isNotNull();
+    	assertThat(repository).isNotNull();
 	}
 }
