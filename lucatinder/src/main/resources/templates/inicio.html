@@ -15,10 +15,10 @@
 <body>
     <div class="container">
         <h1>BIENVENIDO A LUCATINDER</h1>
-    </div>
+
 	
 <div class="row">
-     <div class="container">
+     <div class="container-fluid">
      	<h2>INICIAR SESION</h2>
    	 	<form class="form-inline" th:action="@{/login}" th:object="${perfil}" method="POST">
      		<div class="form-group">
@@ -42,11 +42,13 @@
               </div>
              </div>   
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="genero" id="hombre" value="Male" th:field="*{genero}" checked>
+                  <input class="form-check-input" type="radio" name="genero" id="genero" value="Male" th:field="*{genero}" checked>
                   <label class="form-check-label" for="exampleRadios1">
                     Hombre
                   </label>
-                  <input class="form-check-input" type="radio" name="genero" id="mujer" value="Female" th:field="*{genero}">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genero" id="genero" value="Female" th:field="*{genero}">
                   <label class="form-check-label" for="exampleRadios2">
                     Mujer
                   </label>
@@ -90,20 +92,12 @@
                 <div class="form-group">
                     <input type="submit" value="Dar de alta" />
                 </div>
-
-
-				<div class="form-group">
-  				<label class="col-md-4 control-label"></label>
-  				<div class="col-md-4"><br>
-   				<button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
-  				</div>
-				</div>
                 
             </form>
         </div>
     </div>
     
-    
+</div>
 </body>
 
 </html>

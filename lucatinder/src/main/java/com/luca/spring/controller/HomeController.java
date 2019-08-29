@@ -80,7 +80,7 @@ public class HomeController {
 	  @RequestMapping(value = "/", method = RequestMethod.GET)
 	  public String inicio(@ModelAttribute("perfil") Perfil perfil) {
 		  logger.info("-- en Inicio");
-	      return "inicio.html";
+	      return "index.html";
 	  }
 	  
 	  /**
@@ -101,16 +101,25 @@ public class HomeController {
 	  @RequestMapping(value="/login", method = RequestMethod.POST)
 	  public ModelAndView loggin(@RequestParam("idPerfil") Integer idPerfil, Perfil perfil, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
-		  model.addAttribute(perfil);
-		  model.addAttribute(idPerfil);
-		  if(perfilService.getPefil(idPerfil)!=null) {
-			  logger.info("------------ Usuario encontrado ");
-			  return new ModelAndView("redirect:/listado");
+		  
+		  if(idPerfil!=null) {
+			  model.addAttribute(perfil);
+			  model.addAttribute(idPerfil);
+			  System.out.println("-----------ID--------");
+			  if(perfilService.getPefil(idPerfil)!=null) {
+				  logger.info("------------ Usuario encontrado ");
+				  return new ModelAndView("redirect:/listado");
+			  }
+			  else {
+				  logger.warn("--------- Usuario no encontrado ");
+			  	return new ModelAndView("redirect:/");
+			  }
 		  }
 		  else {
 			  logger.warn("--------- Usuario no encontrado ");
 		  	return new ModelAndView("redirect:/");
 		  }
+		  
 	  }
 	 
 	  
