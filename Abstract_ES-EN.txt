@@ -1,6 +1,6 @@
-ABSTRACT ES
+############################################################################# ABSTRACT Spanish #############################################################################
 
-Se estudio el mercado de la redes sociales y se decide hacer una aplicacion para las personas dedicadas a los  a la informatica.
+Se estudio el mercado de la redes sociales y se decide hacer una aplicacion para las personas dedicadas a la informática.
 
 Se propone una nueva red social para conectar a los trabajadores de Luca Tic, mediante un sistema de "Me gusta" y "No me gusta" con imagenes.
 
@@ -8,9 +8,24 @@ El usuario inicia sesion con su id de perfil, si no esta registrado se prodra re
 
 Cuando dos perfiles se dan like mutuamente se asocia en un listado de Match. Este listado, permite utilizar un sistema de chat privado, hasta que no se da un match no se premite el chat. Además dando "No me gusta" ese perfil no se vuelve a mostrar, se guarda en una lista "No me gusta". Los chats se guardan en una BBDD pues en un futuro puede ser que los necesitemos recuperar. 
 
-Las tecnologias utilizadas son Spring Frameworks con una parte MVC(modelo-vista-controlador) usando servicios Rest con Angular Framework para "quemar"(usar) los objetos. 
-Para la parte de vista usamos bootstrap 4 con estilos css del propio bootstrap para crear una pagina "responsive Web" implementando thymeleaf como base para recuperar, mostrar datos de los objetos.
+Las tecnologias utilizadas son Spring Frameworks con un modelo MVC(modelo-vista-controlador) usando servicios Rest con Angular Framework para "quemar"(usar) los objetos. 
+Para la parte de vista usamos bootstrap 4 con estilos css del propio bootstrap para crear una pagina "responsive Web" implementando thymeleaf como base para recuperar y mostrar datos de los objetos.
 
+En conclusion aportamos una  tecnologia social cuya finalidad es permitir entablar relaciones entre los perfiles de la empresa.
 
+############################################################################# ABSTRACT English #############################################################################
 
-ABSTRACT EN
+We study social network business and we decide make an application for people dedicated to computer science.
+
+A new social network is proposed to connect Luca Tic workers, through a "Like" and "Dislike" system with images.
+
+The user loging with his profile id, if he is not registered he will can register for free, once he acces successfully another page is displayed where apper all profiles into "card" system being able to change the profiles shown by applying "Like" or "Dislike" buttons.
+
+When two profiles "Like" each other, it is associated with "Match" list, this list allows profiles use private chat system, until there´s no "Match" chat is going to be disable. 
+Besides giving "Dislike" that profile never show again, it is associated with "Dislike" list.
+The chats are stored in DDBB because in the future we might need to recover them.
+
+The tecnologies used are Spring Frameworks with MVC model (Model, View, Controller) using Rest services with Angular Framework to "burn" (use) the objects.
+For the view part we use bosstrap 4 with css styles of the bootstrap itsel to create a "responsive Web" page implementing thymeleaf as the basis for retrieving and displaying object data.
+
+In conclussion we provide a social technology whose purpose is to allow relationship between company profiles.
