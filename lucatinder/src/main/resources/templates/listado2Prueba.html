@@ -4,7 +4,7 @@
 <head >
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="listado.css">
+    <link th:href="@{/css/listado.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -13,14 +13,16 @@
     <img class="kratos" src="https://gamingbolt.com/wp-content/uploads/2017/06/god-of-war.jpg">
   </div>
   <div class="name-box">
-    <h2>nombre perfil <span class="age"> edad perfil</span></h2>
-    <p>genero</p>
+  <th:block th:each="perfil : ${listPerfil}">
+  <h5 th:text="${'Nombre: '+perfil.nombre}"></h5>
+  <h6 th:text="${'Eddad:'+perfil.edad}"></h6>
+	 <p th:text="${'Descripcion: '+perfil.descripcion}"></p>
+    <h2 th:text="${'Nombre: '+perfil.nombre}"><span class="age" th:text="${'Edad:'+perfil.edad}"></span></h2>
   </div>
-  <div class="info">
-    <p>Descripcion por aki...<p>
-  </div>
+
+  </th:block>
   <div class="footer">
-    <input type="button" class="botonimagen"/>
+    <input type="button" class="botonimagen" onclick="/addLike"/>
     <input type="button" class="botonimagen2"/>
   </div>
 </div>

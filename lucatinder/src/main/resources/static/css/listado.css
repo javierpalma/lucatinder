@@ -112,7 +112,7 @@ input{
   display: inline-block;    
 }
 .botonimagen{
-  background-image:url(sign-error-icon_34362.png);
+  background-image:url(/images/sign-error-icon_34362.png);
   background-repeat:no-repeat;    
   background-size:contain;
   height:60px;
@@ -121,7 +121,7 @@ input{
   margin-left: 40px;
 }
 .botonimagen2{
-  background-image:url(heart-icon_34407.png);
+  background-image:url(/images/heart-icon_34407.png);
   background-repeat:no-repeat;   
   background-size:contain;
   height:60px;
