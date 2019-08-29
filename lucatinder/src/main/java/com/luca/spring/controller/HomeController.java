@@ -102,24 +102,48 @@ public class HomeController {
 	  public ModelAndView loggin(@RequestParam("idPerfil") Integer idPerfil, Perfil perfil, ModelMap model) {
 		  logger.info("--- Buscando usuario por id ");
 		  
-		  if(idPerfil!=null) {
-			  model.addAttribute(perfil);
+			  
 			  model.addAttribute(idPerfil);
 			  System.out.println("-----------ID--------");
-			  if(perfilService.getPefil(idPerfil)!=null) {
+			  perfil =perfilService.getPefil(idPerfil);
+			  if(perfil!=null) {
+				  model.addAttribute("perfil",perfil);
+				  System.out.println(perfil);
 				  logger.info("------------ Usuario encontrado ");
-				  return new ModelAndView("redirect:/listado");
+				  return new ModelAndView("redirect:/listado/"+perfil.getIdPerfil());
 			  }
 			  else {
 				  logger.warn("--------- Usuario no encontrado ");
 			  	return new ModelAndView("redirect:/");
 			  }
-		  }
-		  else {
-			  logger.warn("--------- Usuario no encontrado ");
-		  	return new ModelAndView("redirect:/");
-		  }
 		  
+	  }
+	  
+	  /**
+	   * Metodo lista los Perfiles.
+	   * Method list all Perfil.
+	   * 
+	   * @param idPerfil. Metodo recibe un parametro de tipo Integer.
+	   * 				  Method get param type Integer.
+	   * @param model. Metodo recibe un parametro de tipo ModelMap.
+	   * 			   Method get param type ModelMap.
+	   * @return listado.html. Metodo retorna un objeto de tipo String.
+	   * 					   Method return String object type.
+	   */
+	  @RequestMapping(value = "/listado/{id}", method = RequestMethod.GET)
+	  //public String listar(@ModelAttribute("idPerfil") int idPerfil, ModelMap model) {
+		  public String listar(@PathVariable("id") int idPerfil, ModelMap model) {
+		  
+		  logger.info("-- en Listado Perfil");
+		  logger.info("-- idPerfil: "+idPerfil);
+		  logger.info("------ p: ");
+		  //Perfil p = (Perfil) model.get("perfil");
+		  
+	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      System.out.println("------------------"+listPerfil);
+	      return "listado";
+	      
 	  }
 	 
 	  
@@ -164,31 +188,7 @@ public class HomeController {
 	      return "contacto.html";	      
 	   }
 	  
-	  /**
-	   * Metodo lista los Perfiles.
-	   * Method list all Perfil.
-	   * 
-	   * @param idPerfil. Metodo recibe un parametro de tipo Integer.
-	   * 				  Method get param type Integer.
-	   * @param model. Metodo recibe un parametro de tipo ModelMap.
-	   * 			   Method get param type ModelMap.
-	   * @return listado.html. Metodo retorna un objeto de tipo String.
-	   * 					   Method return String object type.
-	   */
-	  @RequestMapping(value = "/listado", method = RequestMethod.GET)
-	  //public String listar(@ModelAttribute("idPerfil") int idPerfil, ModelMap model) {
-		  public String listar(ModelMap model) {
-		  
-		  logger.info("-- en Listado Perfil");
-		  logger.info("-- idPerfil: "+model.get("idPerfil"));
-		  Integer idPerfil=1;
-		  System.out.println("---------------"+idPerfil);
-	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
-	      model.addAttribute("listPerfil",listPerfil);
-	      System.out.println("------------------"+listPerfil);
-	      return "listado";
-	      
-	  }
+	 
 	  
 	  /**
 	   * 
