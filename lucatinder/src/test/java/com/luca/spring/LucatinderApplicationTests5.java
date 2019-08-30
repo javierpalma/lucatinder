@@ -30,6 +30,11 @@ public class LucatinderApplicationTests5 {
     @Autowired
     private MockMvc mockMvc;
 	
+    /**
+     * @author Jose Miguel
+     * @throws Exception
+     * @version 1.0
+     */
     @Test
     public void testIncio() throws Exception {
         this.mockMvc

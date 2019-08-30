@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html th:lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link th:href="@{/css/listado.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+  <div class="pic">
+    <img class="kratos" src="https://gamingbolt.com/wp-content/uploads/2017/06/god-of-war.jpg">
+  </div>
+  <div class="name-box">
+  <th:block th:each="perfil : ${listPerfil}">
+  <h5 th:text="${'Nombre: '+perfil.nombre}"></h5>
+  <h6 th:text="${'Eddad:'+perfil.edad}"></h6>
+	 <p th:text="${'Descripcion: '+perfil.descripcion}"></p>
+    <h2 th:text="${'Nombre: '+perfil.nombre}"><span class="age" th:text="${'Edad:'+perfil.edad}"></span></h2>
+  </div>
+
+  </th:block>
+  <div class="footer">
+    <input type="button" class="botonimagen" onclick="/addLike"/>
+    <input type="button" class="botonimagen2"/>
+  </div>
+</div>
+
+</body>
+</html>
