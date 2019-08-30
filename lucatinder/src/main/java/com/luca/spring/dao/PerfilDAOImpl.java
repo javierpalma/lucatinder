@@ -44,7 +44,6 @@ public class PerfilDAOImpl implements PerfilDAO {
 	 * @name addLike
 	 * @param(id usuario actal, id usuario al que doy like)
 	 */
-	@Transactional
 	public void addLike(int idPerfil, int idOtroPerfil) {
 		Contacto c = new Contacto();
 		c.setIdPeril(idPerfil);
@@ -122,7 +121,7 @@ public class PerfilDAOImpl implements PerfilDAO {
 	@Transactional
 	public List<Perfil> listarPerfil(int idPerfil){
 		
-		 Perfil p= getPerfil(idPerfil);
+		 Perfil p= this.getPerfil(idPerfil);
 		 String hql ="SELECT p FROM Perfil p WHERE p.idPerfil !=:id AND genero=:gi ORDER BY RAND()";
 		 System.out.println(p.getGeneroInteres());
 			List<Perfil> listaPerfil = entityManager.createQuery(hql).setParameter("id", idPerfil).setParameter("gi", p.getGeneroInteres()).setMaxResults(20).getResultList();
