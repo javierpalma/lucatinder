@@ -32,7 +32,7 @@
 	    	<h5 class="card-title" th:text="${'Nombre: '+perfil.nombre}"></h5>
 	    	<h6 class="card-subtitle mb-2 text-muted" th:text="${'Eddad:'+perfil.edad}">Card subtitle</h6>
 	    	<p class="card-text" th:text="${'Descripcion: '+perfil.descripcion}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	    	<a href="/addLike" class="card-link">Me Gusta</a>
+	    	<a th:href="@{${addLike}(idOtroPeril=perfil.idPeril)}" class="card-link">Me Gusta</a>
 	    	</div>
   	</div>
 	</div>
