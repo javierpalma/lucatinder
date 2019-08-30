@@ -36,11 +36,10 @@ public class HomeController {
 	private PerfilService perfilService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/addLike", method = RequestMethod.GET)
-	public String addLike(@ModelAttribute("idPerfil") int idPerfil, @RequestParam("idOtroPerfil") int idOtroPerfil, ModelMap model) {
+	@RequestMapping(value = "/addLike", method = RequestMethod.POST)
+	public void addLike(@ModelAttribute("idPerfil") int idPerfil, @RequestParam("idOtroPerfil") int idOtroPerfil, ModelMap model) {
 		logger.info("-------DAR LIKE-------");
 		perfilService.addLike(idPerfil, idOtroPerfil);
-		return "listado/"+idPerfil;
 	}
 	
 	/**
@@ -210,5 +209,14 @@ public class HomeController {
 	      return "listado";
 	      
 	  }
+	  
+	  /*
+	   * @RequestMapping(value = "/addLike", method = RequestMethod.GET)
+	public String addLike(@ModelAttribute("idPerfil") int idPerfil, @RequestParam("idOtroPerfil") int idOtroPerfil, ModelMap model) {
+		logger.info("-------DAR LIKE-------");
+		perfilService.addLike(idPerfil, idOtroPerfil);
+		return "listado/"+idPerfil;
+	}
+	   */
 	
 }
