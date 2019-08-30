@@ -18,6 +18,11 @@ public class LucatinderApplicationTests {
 	 @Autowired
 	 private HomeController controller;
 	
+	 /**
+	  * @author Jose Miguel
+	  * @throws Null or Ok
+	  * @version 1.0
+	  */
 	@Test
 	public void contextLoads() {
 		//controla que el controller exista
