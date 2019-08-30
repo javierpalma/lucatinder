@@ -12,18 +12,22 @@
   <div class="pic">
     <img class="kratos" src="https://gamingbolt.com/wp-content/uploads/2017/06/god-of-war.jpg">
   </div>
+  <div class="card">
   <div class="name-box">
   <th:block th:each="perfil : ${listPerfil}">
   <h5 th:text="${'Nombre: '+perfil.nombre}"></h5>
   <h6 th:text="${'Eddad:'+perfil.edad}"></h6>
 	 <p th:text="${'Descripcion: '+perfil.descripcion}"></p>
     <h2 th:text="${'Nombre: '+perfil.nombre}"><span class="age" th:text="${'Edad:'+perfil.edad}"></span></h2>
+      </th:block>
   </div>
-
-  </th:block>
+</div>
   <div class="footer">
-    <input type="button" class="botonimagen" onclick="/addLike"/>
-    <input type="button" class="botonimagen2"/>
+   
+    <a th:href="@{${addLike}(idOtroPeril=perfil.idPeril)}" class="card-link">
+     <input type="button" class="botonimagen" onclick="/addLike"/></a>
+    <a th:href="@{${addLike}(idOtroPeril=perfil.idPeril)}" class="card-link"> 
+    <input type="button" class="botonimagen2"/></a>
   </div>
 </div>
 
