@@ -27,6 +27,13 @@ public class RestHomeController {
 	private PerfilService perfilService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
+	
+	/**
+	 * @author Jose Miguel
+	 * @param perfil
+	 * @return perfil
+	 * @version 1.0
+	 */
 	@RequestMapping(
 			value = "/raddPerfil", 
 			method = RequestMethod.POST, 
@@ -44,6 +51,13 @@ public class RestHomeController {
 		return perfilService.getPefil(perfil.getIdPerfil());		
 	}
 	
+	
+	/**
+	 * @author Jose Miguel
+	 * @param idPerfil
+	 * @param model
+	 * @return listPerfil
+	 */
 	  @RequestMapping(value = "/rlistado/{id}",
 			  method = RequestMethod.GET, 
 			  headers ={"Accept=application/json"},			
