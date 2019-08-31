@@ -1,11 +1,14 @@
 package com.luca.spring.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +27,6 @@ public class RestHomeController {
 	private PerfilService perfilService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	// @RequestBody Student student significa que un estudiante será el cuerpo de la respuesta
 	@RequestMapping(
 			value = "/raddPerfil", 
 			method = RequestMethod.POST, 
@@ -38,16 +40,25 @@ public class RestHomeController {
 				.path("/{id}")
 				.buildAndExpand(perfil.getIdPerfil())
 				.toUri();
-		
-		/*
-		 * Inside the method body, we build a java.net.URI object using ServletUriComponentsBuilder. 
-		 * It builds the object by capturing the URI of the current request and appending the 
-		 * placeholder /{id} to create a template. buildAndExpand(result.getId()) 
-		 * inserts the id of the newly created student into the template. 
-		 * The result is the URI of the new resource.
-		 */
 
 		return perfilService.getPefil(perfil.getIdPerfil());		
 	}
+	
+	  @RequestMapping(value = "/rlistado/{id}",
+			  method = RequestMethod.GET, 
+			  headers ={"Accept=application/json"},			
+			  produces = "application/json; charset=utf-8")
+		  public List<Perfil> listar(@PathVariable("id") int idPerfil, ModelMap model) {
+		  
+		  logger.info("-- en Listado Perfil");
+		  logger.info("-- idPerfil: "+idPerfil);
+		  logger.info("------ p: ");
+	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      System.out.println("------------------"+listPerfil);
+	      
+	      return listPerfil;
+	      
+	  }
 	
 }
