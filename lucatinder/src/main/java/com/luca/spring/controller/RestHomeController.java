@@ -89,5 +89,29 @@ public class RestHomeController {
 	      return listPerfil;
 	      
 	  }
+		/**
+		 * @author Asiel Blanco
+		 * @param perfil
+		 * @param model
+		 * @return listContacto
+		 */
+	  @RequestMapping(value = "/rcontacto", 
+			  method = RequestMethod.GET,
+	          headers ={"Accept=application/json"},			
+		      produces = "application/json; charset=utf-8")
+	  public List<Perfil> listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+		  
+		  logger.info("-- en Listado Contactos");	
+	      System.out.println("---- metodo Listar Contacto");
+	      
+	      int id = perfil.getIdPerfil();
+	      List<Perfil> listContacto = perfilService.listarContacto(id);
+	      System.out.println("LISTA PERFIL---------"+ listContacto);
+	      model.addAttribute("listPerfil",listContacto);
+	      
+	      return listContacto ;	   
+	      
+	   }
+	  
 	
 }

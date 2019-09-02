@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
@@ -31,10 +32,15 @@ public class HomeController {
 	private PerfilService perfilService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/addLike", method = RequestMethod.POST)
-	public void addLike(@ModelAttribute("idPerfil") int idPerfil, @RequestParam("idOtroPerfil") int idOtroPerfil, ModelMap model) {
+	
+	@RequestMapping(value = "/addLike/{idPerfil}/{idOtroPerfil}", method = RequestMethod.GET)
+	public ModelAndView addLike(@PathVariable("idOtroPerfil") int idOtroPerfil, @PathVariable("idPerfil") int idPerfil, Model model) {
 		logger.info("-------DAR LIKE-------");
+		System.out.println("ID MI PERFIL -- "+ idPerfil);
+		System.out.println("ID PERFIL LIKE -- "+ idOtroPerfil);
 		perfilService.addLike(idPerfil, idOtroPerfil);
+		return new ModelAndView("redirect:/listado/"+idPerfil);
+		
 	}
 	
 	/**
@@ -137,6 +143,7 @@ public class HomeController {
 		  //Perfil p = (Perfil) model.get("perfil");
 		  
 	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("idPerfil", idPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
 	      System.out.println("------------------"+listPerfil);
 	      return "listado";
@@ -172,13 +179,13 @@ public class HomeController {
 	   * 						Method return String object type.
 	   * 
 	   */
-	  @RequestMapping(value = "/contacto", method = RequestMethod.GET)
-	  public String listarContacto(@ModelAttribute("perfil") Perfil perfil, ModelMap model) {
+
+	  @RequestMapping(value = "/contacto/{idPerfil}", method = RequestMethod.GET)
+	  public String listarContacto(@PathVariable("idPerfil") int idPerfil, Model model) {
 		  logger.info("-- en Listado Contactos");	
 	      System.out.println("---- metodo Listar Contacto");
-	      int id = perfil.getIdPerfil();
 	      
-	      List<Perfil> listPerfil = perfilService.listarContacto(id);
+	      List<Perfil> listPerfil = perfilService.listarContacto(idPerfil);
 	      System.out.println("LISTA PERFIL---------"+ listPerfil);
 	      model.addAttribute("listPerfil",listPerfil);
 	      
