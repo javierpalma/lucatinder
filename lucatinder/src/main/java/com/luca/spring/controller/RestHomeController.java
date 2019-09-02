@@ -61,10 +61,9 @@ public class RestHomeController {
 			method = RequestMethod.POST, 
 			headers ={"Accept=application/json"},			
 			produces = "application/json; charset=utf-8")
-	public void addLike(@ModelAttribute("idPerfil") int idPerfil, @RequestParam("idOtroPerfil") int idOtroPerfil) {
+	public void addLike(@PathVariable("idPerfil") int idPerfil, @PathVariable("idOtroPerfil") int idOtroPerfil) {
 		logger.info("-------DAR LIKE EN EL REST-------");
 		perfilService.addLike(idPerfil, idOtroPerfil);
-		
 	}
 	
 	
