@@ -71,6 +71,25 @@ public class RestHomeController {
 	      return listPerfil;
 	      
 	  }
+	  
+		/**
+		 * @author José Miguel 
+		 * @param idPerfil
+		 * @param idOtroPerfil
+		 * @param model
+		 * @version 1.0
+		 */
+		@RequestMapping(
+				value = "/addLike/{idPerfil}/{idOtroPerfil}", 
+				method = RequestMethod.POST, 
+				headers ={"Accept=application/json"},			
+				produces = "application/json; charset=utf-8")
+		public void addLike(@PathVariable("idPerfil") int idPerfil, @PathVariable("idOtroPerfil") int idOtroPerfil) {
+			logger.info("-------DAR LIKE EN EL REST-------");
+			perfilService.addLike(idPerfil, idOtroPerfil);
+		}
+		
+		
 		/**
 		 * @author Asiel Blanco
 		 * @param perfil
