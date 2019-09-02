@@ -37,6 +37,7 @@ public class HomeController {
 	private PerfilService perfilService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	
 	@RequestMapping(value = "/addLike/{idPerfil}/{idOtroPerfil}", method = RequestMethod.GET)
 	public ModelAndView addLike(@PathVariable("idOtroPerfil") int idOtroPerfil, @PathVariable("idPerfil") int idPerfil, Model model) {
 		logger.info("-------DAR LIKE-------");
