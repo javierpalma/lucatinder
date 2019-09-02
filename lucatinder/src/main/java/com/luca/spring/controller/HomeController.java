@@ -45,6 +45,7 @@ public class HomeController {
 		System.out.println("ID PERFIL LIKE -- "+ idOtroPerfil);
 		perfilService.addLike(idPerfil, idOtroPerfil);
 		return new ModelAndView("redirect:/listado/"+idPerfil);
+		
 	}
 	
 	/**
