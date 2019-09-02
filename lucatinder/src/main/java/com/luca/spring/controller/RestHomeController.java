@@ -91,7 +91,8 @@ public class RestHomeController {
 	      System.out.println("LISTA PERFIL---------"+ listContacto);
 	      model.addAttribute("listPerfil",listContacto);
 	      
-	      return listContacto ;	      
+	      return listContacto ;	   
+	      
 	   }
 	  
 	
