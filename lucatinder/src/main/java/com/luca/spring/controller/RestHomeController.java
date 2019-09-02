@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -46,6 +47,23 @@ public class RestHomeController {
 				.toUri();
 
 		return perfilService.getPefil(perfil.getIdPerfil());		
+	}
+	
+	/**
+	 * @author José Miguel 
+	 * @param idPerfil
+	 * @param idOtroPerfil
+	 * @param model
+	 * @version 1.0
+	 */
+	@RequestMapping(
+			value = "/raddLike", 
+			method = RequestMethod.POST, 
+			headers ={"Accept=application/json"},			
+			produces = "application/json; charset=utf-8")
+	public void addLike(@PathVariable("idPerfil") int idPerfil, @PathVariable("idOtroPerfil") int idOtroPerfil) {
+		logger.info("-------DAR LIKE EN EL REST-------");
+		perfilService.addLike(idPerfil, idOtroPerfil);
 	}
 	
 	
