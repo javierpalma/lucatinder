@@ -7,11 +7,13 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilServiciosService } from './services/perfil-servicios.service';
+import { AltaComponent } from './alta/alta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AltaComponent
   ],
   imports: [
     BrowserModule,
