@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+//Nuevo
 
+
+//Creo las rutas
+const routes: Routes = [
+  
+];
+
+//Todo esto ya estaba al ppio
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

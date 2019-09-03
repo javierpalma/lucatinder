@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +21,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 public class RestHomeController {
 	
@@ -37,13 +35,21 @@ public class RestHomeController {
 	 * @return perfil
 	 * @version 1.0
 	 */
-	@PostMapping(value="/API/addPerfil")
-		public Perfil addPerfil(@RequestBody Perfil perfil){
+	@RequestMapping(
+			value = "/API/addPerfil", 
+			method = RequestMethod.POST, 
+			headers ={"Accept=application/json"},			
+			produces = "application/json; charset=utf-8")
+		public Perfil addPerfil(Perfil perfil){
 		logger.info("-- Registrando REST!!!!!!!!");
-		System.out.println(perfil);
 		perfil=perfilService.addPerfil(perfil);
-		
-		return perfil;		
+		URI location = ServletUriComponentsBuilder
+				.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(perfil.getIdPerfil())
+				.toUri();
+
+		return perfilService.getPefil(perfil.getIdPerfil());		
 	}
 		
 	
@@ -107,9 +113,8 @@ public class RestHomeController {
 	      
 	   }
 	  
-	  @GetMapping("/API/login/{id}")
-	  public Perfil login(@PathVariable("id") int id) {
-		  System.out.println("--------------------------" + id);
+	  @PostMapping("/API/loggin/{id}")
+	  public Perfil loggin(@PathVariable("id") int id) {
 		  return perfilService.getPefil(id);
 	  }
 	  

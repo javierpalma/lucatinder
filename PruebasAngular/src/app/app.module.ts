@@ -3,26 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ServiciosPerfilService } from './services/servicios-perfil.service';
-import { HttpClientModule } from '@angular/common/http';
-import { RegistroComponent } from './components/registro/registro.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegistroComponent
+    PerfilComponent,
+   
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule
+    AppRoutingModule
   ],
-  providers: [ServiciosPerfilService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

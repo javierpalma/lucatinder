@@ -141,16 +141,12 @@ public class HomeController {
 		  logger.info("-- idPerfil: "+idPerfil);
 		  logger.info("------ p: ");
 		  //Perfil p = (Perfil) model.get("perfil");
-		  List<Perfil> listPerfil = (List<Perfil>)model.get("listaPerfil");
-		  if(listPerfil == null) {
-		      listPerfil = perfilService.listarPerfil(idPerfil);
-		      model.addAttribute("idPerfil", idPerfil);
-		      model.addAttribute("listPerfil",listPerfil);
-		  }else{
-	    	  System.out.println("------------------"+listPerfil);
-		      return "listado";
-	      }
-		  return "listado";
+		  
+	      List<Perfil> listPerfil = perfilService.listarPerfil(idPerfil);
+	      model.addAttribute("idPerfil", idPerfil);
+	      model.addAttribute("listPerfil",listPerfil);
+	      System.out.println("------------------"+listPerfil);
+	      return "listado";
 	      
 	  }
 	 
