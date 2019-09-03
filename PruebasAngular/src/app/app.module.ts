@@ -7,11 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServiciosPerfilService } from './services/servicios-perfil.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CabeceraComponent } from './components/cabecera/cabecera.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CabeceraComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
