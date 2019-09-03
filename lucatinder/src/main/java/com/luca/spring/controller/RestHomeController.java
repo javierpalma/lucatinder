@@ -36,7 +36,7 @@ public class RestHomeController {
 	 * @version 1.0
 	 */
 	@RequestMapping(
-			value = "/raddPerfil", 
+			value = "/API/addPerfil", 
 			method = RequestMethod.POST, 
 			headers ={"Accept=application/json"},			
 			produces = "application/json; charset=utf-8")
@@ -59,7 +59,7 @@ public class RestHomeController {
 	 * @param model
 	 * @return listPerfil
 	 */
-	  @RequestMapping(value = "/rlistado/{id}",
+	  @RequestMapping(value = "/API/listado/{id}",
 			  method = RequestMethod.GET, 
 			  headers ={"Accept=application/json"},			
 			  produces = "application/json; charset=utf-8")
@@ -84,7 +84,7 @@ public class RestHomeController {
 		 * @version 1.0
 		 */
 		@RequestMapping(
-				value = "/raddLike/{idPerfil}/{idOtroPerfil}", 
+				value = "/API/addLike/{idPerfil}/{idOtroPerfil}", 
 				method = RequestMethod.POST, 
 				headers ={"Accept=application/json"},			
 				produces = "application/json; charset=utf-8")
@@ -100,7 +100,7 @@ public class RestHomeController {
 		 * @param model
 		 * @return listContacto
 		 */
-	  @GetMapping("/rcontacto/{id}")
+	  @GetMapping("/API/contacto/{id}")
 	  public List<Perfil> listarContacto(@PathVariable("id") int id) {
 		  
 		  logger.info("-- en Listado Contactos");	
@@ -113,7 +113,7 @@ public class RestHomeController {
 	      
 	   }
 	  
-	  @PostMapping("/rLoggin/{id}")
+	  @PostMapping("/API/loggin/{id}")
 	  public Perfil loggin(@PathVariable("id") int id) {
 		  return perfilService.getPefil(id);
 	  }
