@@ -22,8 +22,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.luca.spring.Services.PerfilService;
 import com.luca.spring.model.Perfil;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping({ "/API" })
 public class RestHomeController {
 	
 	@Autowired
@@ -38,7 +39,7 @@ public class RestHomeController {
 	 * @version 1.0
 	 */
 	@RequestMapping(
-			value = "/API/addPerfil", 
+			value = "/addPerfil", 
 			method = RequestMethod.POST, 
 			headers ={"Accept=application/json"},			
 			produces = "application/json; charset=utf-8")
@@ -61,7 +62,7 @@ public class RestHomeController {
 	 * @param model
 	 * @return listPerfil
 	 */
-	  @RequestMapping(value = "/API/listado/{id}",
+	  @RequestMapping(value = "/listado/{id}",
 			  method = RequestMethod.GET, 
 			  headers ={"Accept=application/json"},			
 			  produces = "application/json; charset=utf-8")
@@ -86,7 +87,7 @@ public class RestHomeController {
 		 * @version 1.0
 		 */
 		@RequestMapping(
-				value = "/API/addLike/{idPerfil}/{idOtroPerfil}", 
+				value = "/addLike/{idPerfil}/{idOtroPerfil}", 
 				method = RequestMethod.POST, 
 				headers ={"Accept=application/json"},			
 				produces = "application/json; charset=utf-8")
@@ -102,7 +103,7 @@ public class RestHomeController {
 		 * @param model
 		 * @return listContacto
 		 */
-	  @GetMapping("/API/contacto/{id}")
+	  @GetMapping("/contacto/{id}")
 	  public List<Perfil> listarContacto(@PathVariable("id") int id) {
 		  
 		  logger.info("-- en Listado Contactos");	
@@ -115,8 +116,9 @@ public class RestHomeController {
 	      
 	   }
 	  
-	  @PostMapping("/API/loggin/{id}")
-	  public Perfil loggin(@PathVariable("id") int id) {
+	  @CrossOrigin(origins = "*", maxAge = 3600)
+	  @GetMapping("/login/{id}")
+	  public Perfil login(@PathVariable("id") int id) {
 		  return perfilService.getPefil(id);
 	  }
 	  

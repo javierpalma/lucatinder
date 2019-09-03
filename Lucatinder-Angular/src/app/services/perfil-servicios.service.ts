@@ -17,7 +17,7 @@ export class PerfilServiciosService {
   }
 
   public createUser(perfil) {
-    return this.http.post<Perfil>(this.API, perfil);
+    return this.http.post<Perfil>(this.API+'/altaPerfil', perfil);
   }
 
 }
