@@ -37,21 +37,13 @@ public class RestHomeController {
 	 * @return perfil
 	 * @version 1.0
 	 */
-	@RequestMapping(
-			value = "/API/addPerfil", 
-			method = RequestMethod.POST, 
-			headers ={"Accept=application/json"},			
-			produces = "application/json; charset=utf-8")
-		public Perfil addPerfil(Perfil perfil){
+	@PostMapping(value="/API/addPerfil")
+		public Perfil addPerfil(@RequestBody Perfil perfil){
 		logger.info("-- Registrando REST!!!!!!!!");
+		System.out.println(perfil);
 		perfil=perfilService.addPerfil(perfil);
-		URI location = ServletUriComponentsBuilder
-				.fromCurrentRequest()
-				.path("/{id}")
-				.buildAndExpand(perfil.getIdPerfil())
-				.toUri();
-
-		return perfilService.getPefil(perfil.getIdPerfil());		
+		
+		return perfil;		
 	}
 		
 	

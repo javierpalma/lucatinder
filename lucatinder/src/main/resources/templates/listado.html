@@ -18,7 +18,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/listado/">Perfiles <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" th:href="@{'/listado/'+${idPerfil}}">Perfiles <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" th:href="@{'/contacto/'+${idPerfil}}">Me gustan</a>
     </div>
   </div>
