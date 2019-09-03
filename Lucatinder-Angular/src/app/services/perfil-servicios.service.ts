@@ -17,7 +17,13 @@ export class PerfilServiciosService {
   }
 
   public altaPerfil(perfil) {
-    return this.http.post<Perfil>(this.API, perfil);
+    return this.http.post<Perfil>(this.API + "/addPerfil", perfil);
   }
+
+  public getPerfil() {
+    return this.http.get<Perfil[]>(this.API+"/listado/{id}");
+  }
+
+
 
 }
