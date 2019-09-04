@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilServiciosService } from 'src/app/services/perfil-servicios.service';
-
+import { ServiceService } from 'src/app/service/service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado',
@@ -11,7 +11,7 @@ export class ListadoComponent implements OnInit {
 
   
 
-  constructor(private perfilService: PerfilServiciosService) { }
+  constructor(private perfilService: ServiceService) { }
 
   ngOnInit() {
   
