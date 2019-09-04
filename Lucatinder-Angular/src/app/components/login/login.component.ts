@@ -24,7 +24,13 @@ export class LoginComponent implements OnInit {
   login(formValue: any) {
     this.perfilService.login(formValue.id).subscribe(
       perfil => {
-        console.log(perfil);
+        
+        if(perfil==null){
+          this.router.navigate(['alta']);
+        }
+        else{
+          alert(perfil);
+        }
       }
     );
   }
