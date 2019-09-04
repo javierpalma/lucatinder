@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder} from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { PerfilServiciosService } from 'src/app/services/perfil-servicios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private perfilService: PerfilServiciosService,
-              private fb: FormBuilder) { }
+    private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.formGroup = this.fb.group({
@@ -20,8 +21,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(formValue: any){
-    this.perfilService.login(formValue.id).subscribe(perfil =>
-      alert('login correcto'));
+  login(formValue: any) {
+    this.perfilService.login(formValue.id).subscribe(
+      perfil => {
+        console.log(perfil);
+      }
+    );
   }
 }

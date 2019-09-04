@@ -1,5 +1,5 @@
 export class Perfil {
-    id: string;
+    idPerfil: string;
     nombre: string;
     genero: string;
     edad: string;

@@ -13,7 +13,7 @@ export class PerfilServiciosService {
 
 
   login(id: string){
-    return this.http.get(this.API+'/login/'+id);
+    return this.http.get<Perfil>(this.API+'/login/'+id);
   }
 
 
