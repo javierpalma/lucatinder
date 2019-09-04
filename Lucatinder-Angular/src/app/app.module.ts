@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilServiciosService } from './services/perfil-servicios.service';
 import { AltaComponent } from './components/alta/alta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import { PerfilHTMLComponent } from './components/components/perfil-html/perfil-html.component';
 
 
 @NgModule({
@@ -20,13 +21,15 @@ import { ListadoComponent } from './components/listado/listado.component';
     AltaComponent,
     FooterComponent,
     HeaderComponent,
-    ListadoComponent
+    ListadoComponent,
+    PerfilHTMLComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ PerfilServiciosService],
   bootstrap: [AppComponent]

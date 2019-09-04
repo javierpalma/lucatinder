@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Perfil } from '../../models/Perfil';
 import { PerfilServiciosService } from 'src/app/services/perfil-servicios.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-alta',
@@ -15,14 +16,14 @@ export class AltaComponent implements OnInit {
   constructor(private router: Router, private perfilService: PerfilServiciosService) { }
 
 
-  createUser(): void {
+  altaPerfil() {
     this.perfilService.altaPerfil(this.perfil)
         .subscribe( data => {
           alert("Usuario GENERADO de forma correcta");
         });
       };
 
-        ngOnInit() {
-        };
+  ngOnInit() {
+  };
 
 }
