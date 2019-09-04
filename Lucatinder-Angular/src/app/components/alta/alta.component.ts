@@ -16,14 +16,14 @@ export class AltaComponent implements OnInit {
   constructor(private router: Router, private perfilService: PerfilServiciosService) { }
 
 
-  altaPerfil(): void {
+  altaPerfil() {
     this.perfilService.altaPerfil(this.perfil)
         .subscribe( data => {
           alert("Usuario GENERADO de forma correcta");
         });
       };
 
-        ngOnInit() {
-        };
+  ngOnInit() {
+  };
 
 }

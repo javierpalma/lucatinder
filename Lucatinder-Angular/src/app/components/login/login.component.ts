@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['alta']);
         }
         else{
-          alert(perfil);
+          alert(perfil.nombre);
+          this.router.navigate(['lista/'+perfil.idPerfil]);
         }
       }
     );
