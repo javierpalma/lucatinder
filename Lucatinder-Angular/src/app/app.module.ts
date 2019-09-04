@@ -11,6 +11,7 @@ import { AltaComponent } from './components/alta/alta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import { PerfilHTMLComponent } from './components/components/perfil-html/perfil-html.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ListadoComponent } from './components/listado/listado.component';
     AltaComponent,
     FooterComponent,
     HeaderComponent,
-    ListadoComponent
+    ListadoComponent,
+    PerfilHTMLComponent
   ],
   imports: [
     BrowserModule,
