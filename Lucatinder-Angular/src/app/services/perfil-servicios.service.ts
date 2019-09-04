@@ -22,7 +22,7 @@ export class PerfilServiciosService {
 
   }
 
-  public listaPerfil() {
+  public listarPerfil() {
     return this.http.get<Perfil[]>(this.API+"/listado/{id}");
   }
 
