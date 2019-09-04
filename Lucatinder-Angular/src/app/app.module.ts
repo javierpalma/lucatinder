@@ -10,6 +10,7 @@ import { PerfilServiciosService } from './services/perfil-servicios.service';
 import { AltaComponent } from './components/alta/alta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ListadoComponent } from './components/listado/listado.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     AltaComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
