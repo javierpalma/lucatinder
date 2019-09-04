@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup">
-    <div class="form-group">
+  <div class="form-group">
     <label>Id usuario</label>
     <input placeholder="Id usuario" formControlName="id" required name="id" />
-  </div>
-    <button (click)="login(formGroup.value)"  class="btn btn-primary">Login</button>
+    </div>
+    <button class="btn btn-primary" (click)="login(formGroup.value)">Login</button>
   </form>
