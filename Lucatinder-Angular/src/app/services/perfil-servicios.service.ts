@@ -13,7 +13,7 @@ export class PerfilServiciosService {
 
 
   login(id: string){
-    return this.http.get(this.API+'/login/'+id);
+    return this.http.get<Perfil>(this.API+'/login/'+id);
   }
 
 
@@ -22,9 +22,19 @@ export class PerfilServiciosService {
 
   }
 
-  public getPerfil() {
+  public listaPerfil() {
     return this.http.get<Perfil[]>(this.API+"/listado/{id}");
   }
+
+  public contacto() {
+    return this.http.get<Perfil[]>(this.API+"/contacto/{id}");
+  }
+
+  
+
+  
+
+
 
 
 

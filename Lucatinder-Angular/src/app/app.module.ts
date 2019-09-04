@@ -8,12 +8,19 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilServiciosService } from './services/perfil-servicios.service';
 import { AltaComponent } from './components/alta/alta.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ListadoComponent } from './components/listado/listado.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AltaComponent
+    AltaComponent,
+    FooterComponent,
+    HeaderComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
