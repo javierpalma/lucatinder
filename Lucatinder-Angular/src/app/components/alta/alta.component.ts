@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Perfil } from '../../models/Perfil';
 import { PerfilServiciosService } from 'src/app/services/perfil-servicios.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-alta',
