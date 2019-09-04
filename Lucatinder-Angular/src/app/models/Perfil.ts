@@ -5,6 +5,7 @@ export class Perfil {
     edad: string;
     descripcion: string;
     poblacion: string;
+    generoInteres: string;
     edadMinima: string;
     edadMaxima: string;
 }
