@@ -19,7 +19,7 @@ export class AltaComponent implements OnInit {
   altaPerfil() {
     this.perfilService.altaPerfil(this.perfil)
         .subscribe( data => {
-          alert("Usuario GENERADO de forma correcta");
+          
         });
       };
 

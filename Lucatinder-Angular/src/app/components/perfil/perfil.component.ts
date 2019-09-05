@@ -16,7 +16,7 @@ export class PerfilComponent implements OnInit {
   }
   
   public darLike(idOtroPerfil: string){
-    return this.perfilService.darLike(idOtroPerfil).subscribe(data=> alert("Has hecho like"));
+    return this.perfilService.darLike(idOtroPerfil).subscribe(data=>{});
   }
 
 }
