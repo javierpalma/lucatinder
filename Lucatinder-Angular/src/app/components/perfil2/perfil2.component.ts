@@ -15,9 +15,6 @@ export class Perfil2Component implements OnInit {
 
   ngOnInit() {
   }
-  
-  public darLike(idOtroPerfil: string){
-    return this.perfilService.darLike(idOtroPerfil).subscribe(data=>{});
-  }
+
 
 }

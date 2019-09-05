@@ -31,7 +31,9 @@ export class PerfilServiciosService {
     return this.http.get<Perfil[]>(this.API+"/contacto/" + window.sessionStorage.getItem("idPerfil"));
   }
   public darLike(idOtroPerfil: string){
-    return this.http.get(this.API+"/addLike/"+window.sessionStorage.getItem("idPerfil")+"/"+idOtroPerfil)
+   
+    return this.http.get(this.API+"/addLike/"+window.sessionStorage.getItem("idPerfil")+"/"+idOtroPerfil);
+ 
   }
 
   
