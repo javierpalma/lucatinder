@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
 
           this.router.navigate(['listado', formValue.id]);
 
-          alert(perfil.nombre);
-          this.router.navigate(['lista/'+perfil.idPerfil]);
-
+          alert(perfil.nombre);   
         }
       }
     );
