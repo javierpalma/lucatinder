@@ -28,8 +28,14 @@
 			<div class="col-sm-4" style="margin-top:10px; margin-bottom:10px;">
 		
 			<div class="card" style="width: 18rem;">
-			<img th:if="${perfil.genero=='Male'}" th:src="@{/images/profile1.jpg}" class="card-img-top" alt="...">
-			<img th:if="${perfil.genero=='Female'}" th:src="@{/images/profile2.jpg}" class="card-img-top" alt="...">
+				<div th:if="${perfil.genero=='Male'}">
+					<img  th:if="*{perfil.edad &lt;= 30 and perfil.edad &gt;= 0}" th:src="@{/images/profile4.jpg}" class="card-img-top" alt="...">
+					<img  th:if="*{perfil.edad &lt;= 999 and perfil.edad &gt;= 31}" th:src="@{/images/profile3.jpg}" class="card-img-top" alt="...">
+				</div>
+				<div th:if="${perfil.genero=='Female'}">
+					<img  th:if="*{perfil.edad &lt;= 30 and perfil.edad &gt;= 0}" th:src="@{/images/profile2.jpg}" class="card-img-top" alt="...">
+					<img  th:if="*{perfil.edad &lt;= 999 and perfil.edad &gt;= 31}" th:src="@{/images/profile1.jpg}" class="card-img-top" alt="...">
+				</div>
 	  		<div class="card-body">
 	    	<h5 class="card-title" th:text="${'Nombre: '+perfil.nombre}"></h5>
 	    	<h6 class="card-subtitle mb-2 text-muted" th:text="${'Eddad:'+perfil.edad}">Card subtitle</h6>
