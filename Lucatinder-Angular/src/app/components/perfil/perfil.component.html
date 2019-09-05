@@ -4,26 +4,26 @@
         <td>{{perfil.genero}}</td>
         <td>{{perfil.descripcion}}</td>-->
         
-        <div class="col-sm-4" style="margin-top:10px; margin-bottom:10px; margin-right:5px">
+        <div class="col-sm-4" style="margin-top:5px; margin-bottom:5px; margin-right:5px">
 		
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;" >
               <div *ngIf="perfil.genero=='Male'">
                 <div *ngIf="perfil.edad < 31" >
-                  <img  src="../../../assets/images/profile4.jpg" class="card-img-top" alt="...">
+                  <img  class="align-center"  src="../../../assets/images/profile4.jpg" style="width:180px;height:240px" class="card-img-top" alt="...">
                 </div>
-                <div *ngIf="perfil.edad > 31" >
-                  <img  src="../../../assets/images/profile3.jpg" class="card-img-top" alt="...">
+                <div *ngIf="perfil.edad >= 31" >
+                  <img  class="align-center" src="../../../assets/images/profile3.jpg" style="width:180px;height:240px" class="card-img-top" alt="...">
                 </div>
               </div>
               <div *ngIf="perfil.genero=='Female'">
                   <div *ngIf="perfil.edad < 31" >
-                      <img  src="../../../assets/images/profile2.jpg" class="card-img-top" alt="...">
+                      <img  src="../../../assets/images/profile2.jpg" style="width:180px;height:240px" class="card-img-top" alt="...">
                     </div>
-                    <div *ngIf="perfil.edad > 31" >
-                      <img  src="../../../assets/images/profile1.jpg" class="card-img-top" alt="...">
+                    <div *ngIf="perfil.edad >= 31" >
+                      <img  src="../../../assets/images/profile1.jpg" style="width:180px;height:240px" class="card-img-top" alt="...">
                     </div>
                   </div>
-              </div>
+              
             <div class="card-body">
               
               <h4 class="card-title">{{perfil.nombre}}</h4>
@@ -33,5 +33,6 @@
               <a (click)="darLike(perfil.idPerfil)" class="btn btn-primary" onClick = "this.style.visibility= 'hidden';">LIKE</a>
             </div>
           </div>
+        </div>
           
           
