@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['alta']);
         }
         else{
-          alert(perfil);
+          this.router.navigate(['listado', formValue.id]);
         }
       }
     );

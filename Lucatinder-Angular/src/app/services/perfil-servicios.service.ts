@@ -22,8 +22,8 @@ export class PerfilServiciosService {
 
   }
 
-  public listarPerfil() {
-    return this.http.get<Perfil[]>(this.API+"/listado/{id}");
+  public listarPerfil(id) {
+    return this.http.get<Perfil[]>(this.API+"/listado/" + id);
   }
 
   public contacto() {
