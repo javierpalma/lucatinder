@@ -8,7 +8,7 @@ import { Perfil } from '../models/Perfil';
 export class PerfilServiciosService {
 
   public API = '//localhost:8080/API';
-
+  
   constructor(private http: HttpClient) { }
 
 
@@ -18,10 +18,9 @@ export class PerfilServiciosService {
   }
 
 
-  public altaPerfil(perfil) {
-    window.sessionStorage.setItem("idPerfil",perfil.idPerfil);
-    return this.http.post<Perfil>(this.API + "/addPerfil", perfil);
-
+  public altaPerfil(perfil: Perfil) {
+    
+    return this.http.post<Perfil>(this.API + "/addPerfil", perfil);   
   }
 
   public listarPerfil() {

@@ -18,10 +18,12 @@ export class AltaComponent implements OnInit {
 
   altaPerfil() {
     this.perfilService.altaPerfil(this.perfil)
-        .subscribe( data => {
-          
+        .subscribe( data => { window.sessionStorage.setItem("idPerfil", data.idPerfil), 
+        this.router.navigate(['listado', data.idPerfil]);         
         });
+        
       };
+      
 
   ngOnInit() {
   };
