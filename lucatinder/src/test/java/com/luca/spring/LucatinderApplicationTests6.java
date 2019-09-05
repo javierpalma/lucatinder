@@ -25,7 +25,12 @@ public class LucatinderApplicationTests6 {
     @Autowired
     private MockMvc mockMvc;
 	
-    //Controla que el archivo inicio.html se encuentre disponible
+    /**
+	  * @author Javier Palma
+	  * Comprobamos que inicio.html está disponible
+	  * @version 1.0
+	  */
+
     @Test
     public void testHtml() throws Exception {
         this.mockMvc
