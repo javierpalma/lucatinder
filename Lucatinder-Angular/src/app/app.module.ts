@@ -11,9 +11,9 @@ import { AltaComponent } from './components/alta/alta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListadoComponent } from './components/listado/listado.component';
-import { PerfilHTMLComponent } from './components/components/perfil-html/perfil-html.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ContactosComponent } from './components/contactos/contactos.component';
+import { Perfil2Component } from './components/perfil2/perfil2.component';
 
 
 @NgModule({
@@ -24,9 +24,9 @@ import { ContactosComponent } from './components/contactos/contactos.component';
     FooterComponent,
     HeaderComponent,
     ListadoComponent,
-    PerfilHTMLComponent,
     PerfilComponent,
-    ContactosComponent
+    ContactosComponent,
+    Perfil2Component
   ],
   imports: [
     BrowserModule,
