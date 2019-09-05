@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { PerfilHTMLComponent } from './components/components/perfil-html/perfil-html.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ContactosComponent } from './components/contactos/contactos.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     HeaderComponent,
     ListadoComponent,
     PerfilHTMLComponent,
-    PerfilComponent
+    PerfilComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@ export class ListadoComponent implements OnInit {
         this.id=data.id;
     })
 
-    this.perfilService.listarPerfil(this.id)
+    this.perfilService.listarPerfil()
     .subscribe(data => {
       this.listPerfil=data;
     });

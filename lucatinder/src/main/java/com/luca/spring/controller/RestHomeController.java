@@ -84,7 +84,7 @@ public class RestHomeController {
 		 */
 		@RequestMapping(
 				value = "/addLike/{idPerfil}/{idOtroPerfil}", 
-				method = RequestMethod.POST, 
+				method = RequestMethod.GET, 
 				headers ={"Accept=application/json"},			
 				produces = "application/json; charset=utf-8")
 		public void addLike(@PathVariable("idPerfil") int idPerfil, @PathVariable("idOtroPerfil") int idOtroPerfil) {
