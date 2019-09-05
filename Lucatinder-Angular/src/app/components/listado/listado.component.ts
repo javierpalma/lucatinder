@@ -19,7 +19,7 @@ export class ListadoComponent implements OnInit {
   constructor(private router: Router, private perfilService: PerfilServiciosService, private activeRute: ActivatedRoute) {
     
    }
-//mirar ejercicio de antonio donde aparace el activerute, JOSE miralo pero ya consigue e id
+
   ngOnInit() {
     this.activeRute.params.subscribe(data =>{
         this.id=data.id;

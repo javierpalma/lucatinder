@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
         else{
 
           this.router.navigate(['listado', formValue.id]);
-
-          alert(perfil.nombre);   
+             
         }
       }
     );

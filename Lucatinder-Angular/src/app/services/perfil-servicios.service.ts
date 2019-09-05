@@ -29,7 +29,6 @@ export class PerfilServiciosService {
   }
 
   public listarcontacto() {
-    alert("idPErfil: "+window.sessionStorage.getItem("idPerfil"));
     return this.http.get<Perfil[]>(this.API+"/contacto/" + window.sessionStorage.getItem("idPerfil"));
   }
   public darLike(idOtroPerfil: string){
